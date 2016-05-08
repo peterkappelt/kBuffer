@@ -1,0 +1,63 @@
+\hypertarget{k_buffer_8c}{}\section{k\+Buffer/k\+Buffer.c File Reference}
+\label{k_buffer_8c}\index{k\+Buffer/k\+Buffer.\+c@{k\+Buffer/k\+Buffer.\+c}}
+
+
+A universal ringbuffer library A (more or less) universal ringbuffer library, suitable (at least) for x86 and A\+V\+R.  
+
+
+{\ttfamily \#include \char`\"{}k\+Buffer.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for k\+Buffer.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{k_buffer_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t buffer\+Size)
+\begin{DoxyCompactList}\small\item\em init a new buffer This function inits a new \hyperlink{structbuffer__t}{buffer\+\_\+t}.~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A universal ringbuffer library A (more or less) universal ringbuffer library, suitable (at least) for x86 and A\+V\+R. 
+
+\begin{DoxyAuthor}{Author}
+Peter Kappelt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+{\bfseries D\+A\+T\+E} {\bfseries T\+I\+M\+E} 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\href{https://github.com/peterkappelt/kBuffer}{\tt https\+://github.\+com/peterkappelt/k\+Buffer} 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\hypertarget{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{}\index{k\+Buffer.\+c@{k\+Buffer.\+c}!buffer\+Init@{buffer\+Init}}
+\index{buffer\+Init@{buffer\+Init}!k\+Buffer.\+c@{k\+Buffer.\+c}}
+\subsubsection[{buffer\+Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{uint16\+\_\+t}]{buffer\+Size}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}
+
+
+init a new buffer This function inits a new \hyperlink{structbuffer__t}{buffer\+\_\+t}.~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer (\&) to a \hyperlink{structbuffer__t}{buffer\+\_\+t} object. \\
+\hline
+{\em buffer\+Size} & desired size of the buffer, the total buffer size (e.\+g. length-\/of-\/datatype $\ast$ buffer\+Size) may not exceed 2$^\wedge$16 bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an element of buffer\+Status\+\_\+t 
+\end{DoxyReturn}

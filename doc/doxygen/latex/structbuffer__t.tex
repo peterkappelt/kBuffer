@@ -1,0 +1,43 @@
+\hypertarget{structbuffer__t}{}\section{buffer\+\_\+t Struct Reference}
+\label{structbuffer__t}\index{buffer\+\_\+t@{buffer\+\_\+t}}
+
+
+Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a \hyperlink{structbuffer__t}{buffer\+\_\+t}, and run the neccessary functions with a pointer to your instance.  
+
+
+
+
+{\ttfamily \#include $<$k\+Buffer.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structbuffer__t_a226b259859e359bec68028e844a29d13}{}uint8\+\_\+t \hyperlink{structbuffer__t_a226b259859e359bec68028e844a29d13}{is\+Initialized}\label{structbuffer__t_a226b259859e359bec68028e844a29d13}
+
+\begin{DoxyCompactList}\small\item\em is 0 if the buffer is not initialized \end{DoxyCompactList}\item 
+\hypertarget{structbuffer__t_a497ab79d85c05cf11b3042d27c5a0dbb}{}uint16\+\_\+t \hyperlink{structbuffer__t_a497ab79d85c05cf11b3042d27c5a0dbb}{write\+Pointer}\label{structbuffer__t_a497ab79d85c05cf11b3042d27c5a0dbb}
+
+\begin{DoxyCompactList}\small\item\em The write pointer of the buffer. At a write procedure, data gets written and the pointer is incremented. \end{DoxyCompactList}\item 
+\hypertarget{structbuffer__t_aae80b6cbad55ddcee74d93a23af7f88f}{}uint16\+\_\+t \hyperlink{structbuffer__t_aae80b6cbad55ddcee74d93a23af7f88f}{read\+Pointer}\label{structbuffer__t_aae80b6cbad55ddcee74d93a23af7f88f}
+
+\begin{DoxyCompactList}\small\item\em The read pointer of the buffer. At a read procedure, data gets read and the pointer is incremented. \end{DoxyCompactList}\item 
+\hypertarget{structbuffer__t_a1892eba2086d12ac2b09005aeb09ea3b}{}uint16\+\_\+t \hyperlink{structbuffer__t_a1892eba2086d12ac2b09005aeb09ea3b}{length}\label{structbuffer__t_a1892eba2086d12ac2b09005aeb09ea3b}
+
+\begin{DoxyCompactList}\small\item\em The number of elements in the buffer. \end{DoxyCompactList}\item 
+\hypertarget{structbuffer__t_ad42232a8a992b5d0eb9daf58d83337ec}{}uint8\+\_\+t \hyperlink{structbuffer__t_ad42232a8a992b5d0eb9daf58d83337ec}{element\+Length}\label{structbuffer__t_ad42232a8a992b5d0eb9daf58d83337ec}
+
+\begin{DoxyCompactList}\small\item\em The number of bytes of one buffer element. The total memory consumption in Bytes is equal to length $\ast$ element\+Length. \end{DoxyCompactList}\item 
+\hypertarget{structbuffer__t_ac7e5e46f55ed6f23cd0c8630ca768f8b}{}uint16\+\_\+t \hyperlink{structbuffer__t_ac7e5e46f55ed6f23cd0c8630ca768f8b}{datacount}\label{structbuffer__t_ac7e5e46f55ed6f23cd0c8630ca768f8b}
+
+\begin{DoxyCompactList}\small\item\em A variable which is increased by one when new data gets written and decremented by one when data is read. \end{DoxyCompactList}\item 
+\hypertarget{structbuffer__t_a974e9a505549d9f8ad9e45cb1b562413}{}buffer\+Datatype $\ast$ \hyperlink{structbuffer__t_a974e9a505549d9f8ad9e45cb1b562413}{data}\label{structbuffer__t_a974e9a505549d9f8ad9e45cb1b562413}
+
+\begin{DoxyCompactList}\small\item\em A pointer to the first element of the buffer. Length $\ast$ element\+Length bytes of memory are allocated after this pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a \hyperlink{structbuffer__t}{buffer\+\_\+t}, and run the neccessary functions with a pointer to your instance. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+k\+Buffer/\hyperlink{k_buffer_8h}{k\+Buffer.\+h}\end{DoxyCompactItemize}

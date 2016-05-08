@@ -1,0 +1,116 @@
+\hypertarget{k_buffer_8h}{}\section{k\+Buffer/k\+Buffer.h File Reference}
+\label{k_buffer_8h}\index{k\+Buffer/k\+Buffer.\+h@{k\+Buffer/k\+Buffer.\+h}}
+
+
+A universal ringbuffer library A (more or less) universal ringbuffer library, suitable (at least) for x86 and A\+V\+R.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+Include dependency graph for k\+Buffer.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{k_buffer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{k_buffer_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbuffer__t}{buffer\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a \hyperlink{structbuffer__t}{buffer\+\_\+t}, and run the neccessary functions with a pointer to your instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{}\#define {\bfseries buffer\+Datatype}~uint8\+\_\+t\label{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \{ \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a69e32851bd2f089b06555decd80aac1b}{buffer\+O\+K} = 0, 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a6cca9e2a7ecf10052a07be6c0eb252b5}{buffer\+Memory\+Allocation\+Failed}, 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a5f17467af6ed92f0d7888dcb7feb4002}{buffer\+Empty}, 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6ada11f0b96f4a2a828b511c9f713eaeba}{buffer\+Full}
+ \}
+\begin{DoxyCompactList}\small\item\em buffer function return codes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t buffer\+Size)
+\begin{DoxyCompactList}\small\item\em init a new buffer This function inits a new \hyperlink{structbuffer__t}{buffer\+\_\+t}.~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A universal ringbuffer library A (more or less) universal ringbuffer library, suitable (at least) for x86 and A\+V\+R. 
+
+\begin{DoxyAuthor}{Author}
+Peter Kappelt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+xxx 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\href{https://github.com/peterkappelt/kBuffer}{\tt https\+://github.\+com/peterkappelt/k\+Buffer} 
+\end{DoxySeeAlso}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Status\+\_\+t@{buffer\+Status\+\_\+t}}
+\index{buffer\+Status\+\_\+t@{buffer\+Status\+\_\+t}!k\+Buffer.\+h@{k\+Buffer.\+h}}
+\subsubsection[{buffer\+Status\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf buffer\+Status\+\_\+t}}\label{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}
+
+
+buffer function return codes 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{buffer\+O\+K@{buffer\+O\+K}!k\+Buffer.\+h@{k\+Buffer.\+h}}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+O\+K@{buffer\+O\+K}}\item[{\em 
+\hypertarget{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a69e32851bd2f089b06555decd80aac1b}{}buffer\+O\+K\label{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a69e32851bd2f089b06555decd80aac1b}
+}]it seems, as everything worked as expected \index{buffer\+Memory\+Allocation\+Failed@{buffer\+Memory\+Allocation\+Failed}!k\+Buffer.\+h@{k\+Buffer.\+h}}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Memory\+Allocation\+Failed@{buffer\+Memory\+Allocation\+Failed}}\item[{\em 
+\hypertarget{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a6cca9e2a7ecf10052a07be6c0eb252b5}{}buffer\+Memory\+Allocation\+Failed\label{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a6cca9e2a7ecf10052a07be6c0eb252b5}
+}]happens while allocating memory,~\newline
+there is not enough free memory (-\/$>$malloc failed) \index{buffer\+Empty@{buffer\+Empty}!k\+Buffer.\+h@{k\+Buffer.\+h}}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Empty@{buffer\+Empty}}\item[{\em 
+\hypertarget{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a5f17467af6ed92f0d7888dcb7feb4002}{}buffer\+Empty\label{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a5f17467af6ed92f0d7888dcb7feb4002}
+}]happens at reading data,~\newline
+buffer is empty and there is no more data to read \index{buffer\+Full@{buffer\+Full}!k\+Buffer.\+h@{k\+Buffer.\+h}}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Full@{buffer\+Full}}\item[{\em 
+\hypertarget{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6ada11f0b96f4a2a828b511c9f713eaeba}{}buffer\+Full\label{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6ada11f0b96f4a2a828b511c9f713eaeba}
+}]happens at writing data,~\newline
+buffer is full, no more data can be written \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{k_buffer_8h_aec18d6ea571b1326dbeb7ca15f4969c0}{}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Init@{buffer\+Init}}
+\index{buffer\+Init@{buffer\+Init}!k\+Buffer.\+h@{k\+Buffer.\+h}}
+\subsubsection[{buffer\+Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{uint16\+\_\+t}]{buffer\+Size}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8h_aec18d6ea571b1326dbeb7ca15f4969c0}
+
+
+init a new buffer This function inits a new \hyperlink{structbuffer__t}{buffer\+\_\+t}.~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer (\&) to a \hyperlink{structbuffer__t}{buffer\+\_\+t} object. \\
+\hline
+{\em buffer\+Size} & desired size of the buffer, the total buffer size (e.\+g. length-\/of-\/datatype $\ast$ buffer\+Size) may not exceed 2$^\wedge$16 bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an element of buffer\+Status\+\_\+t 
+\end{DoxyReturn}
