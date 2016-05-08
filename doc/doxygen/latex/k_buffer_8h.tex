@@ -2,20 +2,18 @@
 \label{k_buffer_8h}\index{k\+Buffer/k\+Buffer.\+h@{k\+Buffer/k\+Buffer.\+h}}
 
 
-A universal ringbuffer library A (more or less) universal ringbuffer library, suitable (at least) for x86 and A\+V\+R.  
+A universal ringbuffer library.  
 
 
 {\ttfamily \#include $<$stdint.\+h$>$}\\*
-Include dependency graph for k\+Buffer.\+h\+:
-\nopagebreak
+Include dependency graph for k\+Buffer.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=171pt]{k_buffer_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,16 +28,20 @@ struct \hyperlink{structbuffer__t}{buffer\+\_\+t}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{}\#define {\bfseries buffer\+Datatype}~uint8\+\_\+t\label{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}
+\hypertarget{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{}\#define \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype}~uint16\+\_\+t\label{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The datatype of one buffer element. As default, it is an 16 bit unsigned integer. Feel free to change it to your needs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \{ \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a69e32851bd2f089b06555decd80aac1b}{buffer\+O\+K} = 0, 
+enum \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \{ \\*
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a69e32851bd2f089b06555decd80aac1b}{buffer\+O\+K} = 0, 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a6cca9e2a7ecf10052a07be6c0eb252b5}{buffer\+Memory\+Allocation\+Failed}, 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a5f17467af6ed92f0d7888dcb7feb4002}{buffer\+Empty}, 
-\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6ada11f0b96f4a2a828b511c9f713eaeba}{buffer\+Full}
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6ada11f0b96f4a2a828b511c9f713eaeba}{buffer\+Full}, 
+\\*
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a4443de2adc482ee2e06cedc60cd5a299}{buffer\+Not\+Initialized}, 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a0620283513c857f87186899770dd2c2e}{buffer\+Error}
  \}
 \begin{DoxyCompactList}\small\item\em buffer function return codes \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -47,21 +49,33 @@ enum \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\
 \item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t buffer\+Size)
 \begin{DoxyCompactList}\small\item\em init a new buffer This function inits a new \hyperlink{structbuffer__t}{buffer\+\_\+t}.~\newline
- \end{DoxyCompactList}\end{DoxyCompactItemize}
+ \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_a8508583be1e356a243b0ce67254c516e}{buffer\+Write\+To\+Index} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t index, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} data)
+\begin{DoxyCompactList}\small\item\em write data to a specific index of the buffer. W\+A\+R\+N\+I\+N\+G\+: Take care when using this function, it is against the main concept of a ringbuffer \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_aa0d7e2a4b6fd3da2822d7f968be74e5c}{buffer\+Read\+From\+Index} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t index, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$data)
+\begin{DoxyCompactList}\small\item\em read data from a specifig index of the buffer W\+A\+R\+N\+I\+N\+G\+: Take care when using this function, it is against the main concept of a ringbuffer \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{k_buffer_8h_a5c599b9386c73ccd7b5eeb25f6cca38e}{buffer\+Is\+Empty} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Checks, wheter the buffer is empty. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{k_buffer_8h_ac69b8a12a33d0cf0a5dab8feb4f7b020}{buffer\+Is\+Full} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Checks, wheter the buffer is full. \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_a9d6410a89adf65a3ef12340ecb9bbd55}{buffer\+Write} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} data)
+\begin{DoxyCompactList}\small\item\em add data to the end of the ringbuffer \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_a9b80be9033ccd6b5a101f811520ab4cc}{buffer\+Read} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$data)
+\begin{DoxyCompactList}\small\item\em read data from the beginning of the buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-A universal ringbuffer library A (more or less) universal ringbuffer library, suitable (at least) for x86 and A\+V\+R. 
+A universal ringbuffer library. 
 
 \begin{DoxyAuthor}{Author}
 Peter Kappelt 
 \end{DoxyAuthor}
-\begin{DoxyDate}{Date}
-xxx 
-\end{DoxyDate}
 \begin{DoxySeeAlso}{See also}
 \href{https://github.com/peterkappelt/kBuffer}{\tt https\+://github.\+com/peterkappelt/k\+Buffer} 
 \end{DoxySeeAlso}
+\begin{DoxyCopyright}{Copyright}
+Peter Kappelt 2016; M\+I\+T License (see L\+I\+C\+E\+N\+S\+E.\+txt in the root of this repository) 
+\end{DoxyCopyright}
 
 
 \subsection{Enumeration Type Documentation}
@@ -86,7 +100,11 @@ there is not enough free memory (-\/$>$malloc failed) \index{buffer\+Empty@{buff
 buffer is empty and there is no more data to read \index{buffer\+Full@{buffer\+Full}!k\+Buffer.\+h@{k\+Buffer.\+h}}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Full@{buffer\+Full}}\item[{\em 
 \hypertarget{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6ada11f0b96f4a2a828b511c9f713eaeba}{}buffer\+Full\label{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6ada11f0b96f4a2a828b511c9f713eaeba}
 }]happens at writing data,~\newline
-buffer is full, no more data can be written \end{description}
+buffer is full, no more data can be written \index{buffer\+Not\+Initialized@{buffer\+Not\+Initialized}!k\+Buffer.\+h@{k\+Buffer.\+h}}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Not\+Initialized@{buffer\+Not\+Initialized}}\item[{\em 
+\hypertarget{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a4443de2adc482ee2e06cedc60cd5a299}{}buffer\+Not\+Initialized\label{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a4443de2adc482ee2e06cedc60cd5a299}
+}]The buffer is not initialized \index{buffer\+Error@{buffer\+Error}!k\+Buffer.\+h@{k\+Buffer.\+h}}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Error@{buffer\+Error}}\item[{\em 
+\hypertarget{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a0620283513c857f87186899770dd2c2e}{}buffer\+Error\label{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a0620283513c857f87186899770dd2c2e}
+}]an error occured, which isn\textquotesingle{}t explained nearer. Have a look at the according function \end{description}
 \end{Desc}
 
 
@@ -112,5 +130,190 @@ init a new buffer This function inits a new \hyperlink{structbuffer__t}{buffer\+
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-an element of buffer\+Status\+\_\+t 
+an element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
 \end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+Memory\+Allocation\+Failed} & The memory allocation with malloc failed. Make sure, you have enough memory available \\
+\hline
+{\em buffer\+O\+K} & It seems, like everything went well \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{k_buffer_8h_a5c599b9386c73ccd7b5eeb25f6cca38e}{}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Is\+Empty@{buffer\+Is\+Empty}}
+\index{buffer\+Is\+Empty@{buffer\+Is\+Empty}!k\+Buffer.\+h@{k\+Buffer.\+h}}
+\subsubsection[{buffer\+Is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t buffer\+Is\+Empty (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8h_a5c599b9386c73ccd7b5eeb25f6cca38e}
+
+
+Checks, wheter the buffer is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & buffer is empty \\
+\hline
+{\em 0} & buffer is not empty \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{k_buffer_8h_ac69b8a12a33d0cf0a5dab8feb4f7b020}{}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Is\+Full@{buffer\+Is\+Full}}
+\index{buffer\+Is\+Full@{buffer\+Is\+Full}!k\+Buffer.\+h@{k\+Buffer.\+h}}
+\subsubsection[{buffer\+Is\+Full}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t buffer\+Is\+Full (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8h_ac69b8a12a33d0cf0a5dab8feb4f7b020}
+
+
+Checks, wheter the buffer is full. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & buffer is full \\
+\hline
+{\em 0} & buffer is not full \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{k_buffer_8h_a9b80be9033ccd6b5a101f811520ab4cc}{}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Read@{buffer\+Read}}
+\index{buffer\+Read@{buffer\+Read}!k\+Buffer.\+h@{k\+Buffer.\+h}}
+\subsubsection[{buffer\+Read}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Read (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{{\bf buffer\+Datatype} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8h_a9b80be9033ccd6b5a101f811520ab4cc}
+
+
+read data from the beginning of the buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+{\em data} & pointer to a variable where data should be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+O\+K} & it worked as expected \\
+\hline
+{\em buffer\+Not\+Initialized} & the \hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init()} method hasn\textquotesingle{}t been called or failed before \\
+\hline
+{\em buffer\+Empty} & the buffer is empty an no more data can be read \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{k_buffer_8h_aa0d7e2a4b6fd3da2822d7f968be74e5c}{}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Read\+From\+Index@{buffer\+Read\+From\+Index}}
+\index{buffer\+Read\+From\+Index@{buffer\+Read\+From\+Index}!k\+Buffer.\+h@{k\+Buffer.\+h}}
+\subsubsection[{buffer\+Read\+From\+Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Read\+From\+Index (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{uint16\+\_\+t}]{index, }
+\item[{{\bf buffer\+Datatype} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8h_aa0d7e2a4b6fd3da2822d7f968be74e5c}
+
+
+read data from a specifig index of the buffer W\+A\+R\+N\+I\+N\+G\+: Take care when using this function, it is against the main concept of a ringbuffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+{\em index} & The index, where data should be written.~\newline
+It can be in range 0 to length -\/ 1 \\
+\hline
+{\em data} & Pointer to a variable where the read data should be written to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+O\+K} & It went successfull \\
+\hline
+{\em buffer\+Not\+Initialized} & The buffer is not initialized. You have to call buffer\+Init before (or the init failed before) \\
+\hline
+{\em buffer\+Error} & The desired data index is out of range \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{k_buffer_8h_a9d6410a89adf65a3ef12340ecb9bbd55}{}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Write@{buffer\+Write}}
+\index{buffer\+Write@{buffer\+Write}!k\+Buffer.\+h@{k\+Buffer.\+h}}
+\subsubsection[{buffer\+Write}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Write (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{{\bf buffer\+Datatype}}]{data}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8h_a9d6410a89adf65a3ef12340ecb9bbd55}
+
+
+add data to the end of the ringbuffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+{\em data} & data which should be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+O\+K} & it worked as expected \\
+\hline
+{\em buffer\+Not\+Initialized} & the \hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init()} method hasn\textquotesingle{}t been called or failed before \\
+\hline
+{\em buffer\+Full} & the buffer is full an no more data can be written \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{k_buffer_8h_a8508583be1e356a243b0ce67254c516e}{}\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Write\+To\+Index@{buffer\+Write\+To\+Index}}
+\index{buffer\+Write\+To\+Index@{buffer\+Write\+To\+Index}!k\+Buffer.\+h@{k\+Buffer.\+h}}
+\subsubsection[{buffer\+Write\+To\+Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Write\+To\+Index (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{uint16\+\_\+t}]{index, }
+\item[{{\bf buffer\+Datatype}}]{data}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8h_a8508583be1e356a243b0ce67254c516e}
+
+
+write data to a specific index of the buffer. W\+A\+R\+N\+I\+N\+G\+: Take care when using this function, it is against the main concept of a ringbuffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+{\em index} & The index, where data should be written.~\newline
+It can be in range 0 to length -\/ 1 \\
+\hline
+{\em data} & The actual data which should be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+O\+K} & It went successfull \\
+\hline
+{\em buffer\+Not\+Initialized} & The buffer is not initialized. You have to call buffer\+Init before (or the init failed before) \\
+\hline
+{\em buffer\+Error} & The desired data index is out of range \\
+\hline
+\end{DoxyRetVals}

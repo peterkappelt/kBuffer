@@ -1,10 +1,9 @@
 /**
  * @file kBuffer.h
  * @author Peter Kappelt
- * @date xxx
  * @brief A universal ringbuffer library
- * A (more or less) universal ringbuffer library, suitable (at least) for x86 and AVR
  * @see https://github.com/peterkappelt/kBuffer
+ * @copyright Peter Kappelt 2016; MIT License (see LICENSE.txt in the root of this repository)
  */
 
 #ifndef KBUFFER_H
@@ -12,7 +11,11 @@
 
 #include <stdint.h>
 
-#define bufferDatatype uint8_t
+/**
+ * @brief The datatype of one buffer element.
+ * As default, it is an 16 bit unsigned integer. Feel free to change it to your needs
+ */
+#define bufferDatatype uint16_t
 
 /**
  * @brief Struct for buffer handling.
@@ -47,12 +50,22 @@ typedef enum{
     /** happens at reading data,<br>buffer is empty and there is no more data to read */
     bufferEmpty,
     /** happens at writing data,<br>buffer is full, no more data can be written */
-    bufferFull
+    bufferFull,
+    /** The buffer is not initialized */
+    bufferNotInitialized,
+    /** an error occured, which isn't explained nearer. Have a look at the according function */
+    bufferError
 }bufferStatus_t;
 
 
 //Function declearations
 
 bufferStatus_t bufferInit(buffer_t* buffer, uint16_t bufferSize);
+bufferStatus_t bufferWriteToIndex(buffer_t* buffer, uint16_t index, bufferDatatype data);
+bufferStatus_t bufferReadFromIndex(buffer_t* buffer, uint16_t index, bufferDatatype* data);
+uint8_t bufferIsEmpty(buffer_t* buffer);
+uint8_t bufferIsFull(buffer_t* buffer);
+bufferStatus_t bufferWrite(buffer_t* buffer, bufferDatatype data);
+bufferStatus_t bufferRead(buffer_t* buffer, bufferDatatype* data);
 
 #endif

@@ -1,0 +1,68 @@
+\hypertarget{index_intro}{}\section{Introduction}\label{index_intro}
+k\+Buffer is a universal library for a ring-\/ / circular buffer. \hypertarget{index_function}{}\section{Functions and Datatypes}\label{index_function}
+\hyperlink{structbuffer__t}{buffer\+\_\+t}~\newline
+ \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t}~\newline
+ ~\newline
+ \hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init()}~\newline
+ \hyperlink{k_buffer_8c_ac69b8a12a33d0cf0a5dab8feb4f7b020}{buffer\+Is\+Full()}~\newline
+ \hyperlink{k_buffer_8c_a5c599b9386c73ccd7b5eeb25f6cca38e}{buffer\+Is\+Empty()}~\newline
+ \hyperlink{k_buffer_8c_a8508583be1e356a243b0ce67254c516e}{buffer\+Write\+To\+Index()}~\newline
+ \hyperlink{k_buffer_8c_aa0d7e2a4b6fd3da2822d7f968be74e5c}{buffer\+Read\+From\+Index()}~\newline
+ \hypertarget{index_usage}{}\section{Usage and Examples}\label{index_usage}
+\hypertarget{index_init}{}\subsection{Initializing a ringbuffer}\label{index_init}
+At first, you have to include the k\+Buffer library into your project. This can be done by copying the files from src/k\+Buffer to your project\textquotesingle{}s directory. You can include the header as usual\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{k_buffer_8h}{kBuffer.h}"}
+\end{DoxyCode}
+ In your code, you have to define an instance of \hyperlink{structbuffer__t}{buffer\+\_\+t}. You have to init this instance with the function \hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init()}. If you want to have a ringbuffer with 8 elements\+: 
+\begin{DoxyCode}
+\hyperlink{structbuffer__t}{buffer\_t} ringbuffer;
+\hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{bufferInit}(&ringbuffer, 8);
+\end{DoxyCode}
+ To check, if the initialization was successfull, you need to parse the return value of \hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init()}\+: 
+\begin{DoxyCode}
+\hyperlink{structbuffer__t}{buffer\_t} ringbuffer;
+\textcolor{keywordflow}{if}(\hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{bufferInit}(&ringbuffer, 8) == \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6a69e32851bd2f089b06555decd80aac1b}{bufferOK})\{
+ do\_something\_it\_worked\_ok();
+\}\textcolor{keywordflow}{else}\{
+ do\_something\_there\_was\_an\_error();
+\}
+\end{DoxyCode}
+ \hypertarget{index_write}{}\subsection{Writing data to the buffer}\label{index_write}
+To write data to the buffer, you can use the \hyperlink{k_buffer_8c_a9d6410a89adf65a3ef12340ecb9bbd55}{buffer\+Write()} function\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{k_buffer_8h}{kBuffer.h}"}
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{void})\{
+
+ \hyperlink{structbuffer__t}{buffer\_t} ringbuffer;            \textcolor{comment}{// Declare an buffer instance}
+ \hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{bufferInit}(&ringbuffer, 8);     \textcolor{comment}{// Init the buffer with 8 elements}
+ \textcolor{comment}{//Notice, that no errorhandling has been done. We just expect a success}
+ 
+ \hyperlink{k_buffer_8c_a9d6410a89adf65a3ef12340ecb9bbd55}{bufferWrite}(&ringbuffer, 42);   \textcolor{comment}{// Write the integer "42" to the buffer.}
+
+ \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+ \hypertarget{index_read}{}\subsection{Reading data from the buffer}\label{index_read}
+To read data from the buffer, you can use the \hyperlink{k_buffer_8c_a9b80be9033ccd6b5a101f811520ab4cc}{buffer\+Read()} function\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{k_buffer_8h}{kBuffer.h}"}
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{void})\{
+
+ \hyperlink{structbuffer__t}{buffer\_t} ringbuffer;                \textcolor{comment}{// Declare an buffer instance}
+ \hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{bufferInit}(&ringbuffer, 8);         \textcolor{comment}{// Init the buffer with 8 elements}
+ \textcolor{comment}{//Notice, that no errorhandling has been done. We just expect a success}
+ 
+ \hyperlink{k_buffer_8c_a9d6410a89adf65a3ef12340ecb9bbd55}{bufferWrite}(&ringbuffer, 42);       \textcolor{comment}{// Write the integer "42" to the buffer.}
+
+ uint16\_t dataRead;                  \textcolor{comment}{// Declare an integer, where the read data should be stored}
+ \hyperlink{k_buffer_8c_a9b80be9033ccd6b5a101f811520ab4cc}{bufferRead}(&ringbuffer, &dataRead); \textcolor{comment}{// We expect, that dataRead is now 42 (because we have
+       written 42 to the buffer before)}
+
+ \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+ \hypertarget{index_example}{}\section{Example code}\label{index_example}
+An example code project is available under ../../test/x86. It isn\textquotesingle{}t well documented, but you can compile it for your system. 
