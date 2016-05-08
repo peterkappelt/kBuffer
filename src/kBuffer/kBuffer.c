@@ -15,6 +15,10 @@
  * #bufferStatus_t<br>
  * <br>
  * bufferInit()<br>
+ * <br>
+ * bufferWrite();<br>
+ * bufferRead();<br>
+ * <br>
  * bufferIsFull()<br>
  * bufferIsEmpty()<br>
  * bufferWriteToIndex()<br>
