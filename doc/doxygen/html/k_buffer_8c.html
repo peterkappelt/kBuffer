@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -97,6 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="k_buffer_8h_source.html">kBuffer.h</a>&quot;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for kBuffer.c:</div>
 <div class="dyncontent">
@@ -129,6 +131,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a9b80be9033ccd6b5a101f811520ab4cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="k_buffer_8c.html#a9b80be9033ccd6b5a101f811520ab4cc">bufferRead</a> (<a class="el" href="structbuffer__t.html">buffer_t</a> *buffer, <a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> *data)</td></tr>
 <tr class="memdesc:a9b80be9033ccd6b5a101f811520ab4cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">read data from the beginning of the buffer  <a href="#a9b80be9033ccd6b5a101f811520ab4cc">More...</a><br /></td></tr>
 <tr class="separator:a9b80be9033ccd6b5a101f811520ab4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac806d926fd21729feb18f8e7738e76b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="k_buffer_8c.html#ac806d926fd21729feb18f8e7738e76b4">bufferFill</a> (<a class="el" href="structbuffer__t.html">buffer_t</a> *buffer, <a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> data, uint8_t silent)</td></tr>
+<tr class="memdesc:ac806d926fd21729feb18f8e7738e76b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">fill the whole buffer with given dummy data.  <a href="#ac806d926fd21729feb18f8e7738e76b4">More...</a><br /></td></tr>
+<tr class="separator:ac806d926fd21729feb18f8e7738e76b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1389f5c08210e077301c35bc3b43f681"><td class="memItemLeft" align="right" valign="top"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="k_buffer_8c.html#a1389f5c08210e077301c35bc3b43f681">bufferMean</a> (<a class="el" href="structbuffer__t.html">buffer_t</a> *buffer, <a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> *meanOut)</td></tr>
+<tr class="memdesc:a1389f5c08210e077301c35bc3b43f681"><td class="mdescLeft">&#160;</td><td class="mdescRight">take the average of the whole buffer  <a href="#a1389f5c08210e077301c35bc3b43f681">More...</a><br /></td></tr>
+<tr class="separator:a1389f5c08210e077301c35bc3b43f681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1da694b34c0a52809c923d2d149d1348"><td class="memItemLeft" align="right" valign="top"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="k_buffer_8c.html#a1da694b34c0a52809c923d2d149d1348">bufferMeanRMS</a> (<a class="el" href="structbuffer__t.html">buffer_t</a> *buffer, <a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> *meanOut)</td></tr>
+<tr class="memdesc:a1da694b34c0a52809c923d2d149d1348"><td class="mdescLeft">&#160;</td><td class="mdescRight">take the root mean square of the whole buffer  <a href="#a1da694b34c0a52809c923d2d149d1348">More...</a><br /></td></tr>
+<tr class="separator:a1da694b34c0a52809c923d2d149d1348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A universal ringbuffer library. </p>
@@ -136,6 +147,56 @@ Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a href="https://github.com/peterkappelt/kBuffer">https://github.com/peterkappelt/kBuffer</a> </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Peter Kappelt 2016; MIT License (see LICENSE.txt in the root of this repository) </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ac806d926fd21729feb18f8e7738e76b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a> bufferFill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbuffer__t.html">buffer_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a>&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>silent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>fill the whole buffer with given dummy data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>pointer <a class="el" href="structbuffer__t.html" title="Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a buffe...">buffer_t</a> instance </td></tr>
+    <tr><td class="paramname">data</td><td>data to fill the buffer with </td></tr>
+    <tr><td class="paramname">silent</td><td>if this parameter is 1, the buffer will be filled with data, but the write pointer stays at its current position (usefull, if you take the mean but the buffer is not full yet. You can just prefill it, the mean will be taken with the prefilled values) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an element of <a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6" title="buffer function return codes ">bufferStatus_t</a> </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">bufferOK</td><td>it worked as expected </td></tr>
+    <tr><td class="paramname">bufferNotInitialized</td><td>the buffer wasn't initialized </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="aec18d6ea571b1326dbeb7ca15f4969c0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -239,6 +300,94 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a1389f5c08210e077301c35bc3b43f681"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a> bufferMean </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbuffer__t.html">buffer_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> *&#160;</td>
+          <td class="paramname"><em>meanOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>take the average of the whole buffer </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>pointer to a <a class="el" href="structbuffer__t.html" title="Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a buffe...">buffer_t</a> instance </td></tr>
+    <tr><td class="paramname">meanOut</td><td>pointer to a variable, where the mean will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a element of <a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6" title="buffer function return codes ">bufferStatus_t</a> </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">bufferOK</td><td>it worked as expected, the mean is stored at the given variable </td></tr>
+    <tr><td class="paramname">bufferNotInitialized</td><td>the buffer is not initialized </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>The sum of the buffer is taken. Take precautions, that this variable won't overflow </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1da694b34c0a52809c923d2d149d1348"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a> bufferMeanRMS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbuffer__t.html">buffer_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> *&#160;</td>
+          <td class="paramname"><em>meanOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>take the root mean square of the whole buffer </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>pointer to a <a class="el" href="structbuffer__t.html" title="Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a buffe...">buffer_t</a> instance </td></tr>
+    <tr><td class="paramname">meanOut</td><td>pointer to a variable, where the mean will be stored </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a element of <a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6" title="buffer function return codes ">bufferStatus_t</a> </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">bufferOK</td><td>it worked as expected, the mean is stored at the given variable </td></tr>
+    <tr><td class="paramname">bufferNotInitialized</td><td>the buffer is not initialized </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bug:</a></b></dt><dd>The sum of squared buffer elements is taken. Take precautions, that this variable won't overflow </dd></dl>
 
 </div>
 </div>

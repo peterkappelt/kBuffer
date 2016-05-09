@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readpointer',['readPointer',['../structbuffer__t.html#aae80b6cbad55ddcee74d93a23af7f88f',1,'buffer_t']]]
+  ['length',['length',['../structbuffer__t.html#a1892eba2086d12ac2b09005aeb09ea3b',1,'buffer_t']]]
 ];

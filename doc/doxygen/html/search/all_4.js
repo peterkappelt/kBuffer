@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['kbuffer_2ec',['kBuffer.c',['../k_buffer_8c.html',1,'']]],
-  ['kbuffer_2eh',['kBuffer.h',['../k_buffer_8h.html',1,'']]]
+  ['isinitialized',['isInitialized',['../structbuffer__t.html#a226b259859e359bec68028e844a29d13',1,'buffer_t']]]
 ];

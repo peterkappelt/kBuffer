@@ -1,39 +1,52 @@
 \contentsline {chapter}{\numberline {1}Main Page}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Functions and Datatypes}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}Usage and Examples}{1}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Initializing a ringbuffer}{1}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Writing data to the buffer}{2}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Reading data from the buffer}{2}{subsection.1.3.3}
-\contentsline {section}{\numberline {1.4}Example code}{2}{section.1.4}
-\contentsline {chapter}{\numberline {2}Data Structure Index}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Data Structures}{3}{section.2.1}
-\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}
-\contentsline {chapter}{\numberline {4}Data Structure Documentation}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}t Struct Reference}{7}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{7}{subsection.4.1.1}
-\contentsline {chapter}{\numberline {5}File Documentation}{9}{chapter.5}
-\contentsline {section}{\numberline {5.1}k\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffer/k\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffer.c File Reference}{9}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{10}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Function Documentation}{10}{subsection.5.1.2}
-\contentsline {subsubsection}{\numberline {5.1.2.1}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Init}{10}{subsubsection.5.1.2.1}
-\contentsline {subsubsection}{\numberline {5.1.2.2}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Empty}{10}{subsubsection.5.1.2.2}
-\contentsline {subsubsection}{\numberline {5.1.2.3}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Full}{11}{subsubsection.5.1.2.3}
-\contentsline {subsubsection}{\numberline {5.1.2.4}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Read}{11}{subsubsection.5.1.2.4}
-\contentsline {subsubsection}{\numberline {5.1.2.5}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}From\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Index}{11}{subsubsection.5.1.2.5}
-\contentsline {subsubsection}{\numberline {5.1.2.6}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Write}{12}{subsubsection.5.1.2.6}
-\contentsline {subsubsection}{\numberline {5.1.2.7}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Write\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}To\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Index}{12}{subsubsection.5.1.2.7}
-\contentsline {section}{\numberline {5.2}k\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffer/k\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffer.h File Reference}{12}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{14}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Enumeration Type Documentation}{14}{subsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.2.1}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Status\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}t}{14}{subsubsection.5.2.2.1}
-\contentsline {subsection}{\numberline {5.2.3}Function Documentation}{15}{subsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.3.1}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Init}{15}{subsubsection.5.2.3.1}
-\contentsline {subsubsection}{\numberline {5.2.3.2}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Empty}{16}{subsubsection.5.2.3.2}
-\contentsline {subsubsection}{\numberline {5.2.3.3}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Full}{16}{subsubsection.5.2.3.3}
-\contentsline {subsubsection}{\numberline {5.2.3.4}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Read}{16}{subsubsection.5.2.3.4}
-\contentsline {subsubsection}{\numberline {5.2.3.5}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}From\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Index}{17}{subsubsection.5.2.3.5}
-\contentsline {subsubsection}{\numberline {5.2.3.6}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Write}{17}{subsubsection.5.2.3.6}
-\contentsline {subsubsection}{\numberline {5.2.3.7}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Write\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}To\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Index}{17}{subsubsection.5.2.3.7}
-\contentsline {chapter}{Index}{19}{section*.8}
+\contentsline {section}{\numberline {1.3}Usage}{1}{section.1.3}
+\contentsline {section}{\numberline {1.4}Example code}{1}{section.1.4}
+\contentsline {chapter}{\numberline {2}Fundamental Usage}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Buffer datatype definition}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Initializing a ringbuffer}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Writing data to the buffer}{3}{section.2.3}
+\contentsline {section}{\numberline {2.4}Reading data from the buffer}{4}{section.2.4}
+\contentsline {chapter}{\numberline {3}Mean of buffer}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Enabling of mean functions}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Caution!}{5}{section.3.2}
+\contentsline {section}{\numberline {3.3}Mean of the buffer}{5}{section.3.3}
+\contentsline {chapter}{\numberline {4}Bug List}{7}{chapter.4}
+\contentsline {chapter}{\numberline {5}Data Structure Index}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Data Structures}{9}{section.5.1}
+\contentsline {chapter}{\numberline {6}File Index}{11}{chapter.6}
+\contentsline {section}{\numberline {6.1}File List}{11}{section.6.1}
+\contentsline {chapter}{\numberline {7}Data Structure Documentation}{13}{chapter.7}
+\contentsline {section}{\numberline {7.1}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}t Struct Reference}{13}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{13}{subsection.7.1.1}
+\contentsline {chapter}{\numberline {8}File Documentation}{15}{chapter.8}
+\contentsline {section}{\numberline {8.1}k\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffer/k\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffer.c File Reference}{15}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Detailed Description}{16}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Function Documentation}{16}{subsection.8.1.2}
+\contentsline {subsubsection}{\numberline {8.1.2.1}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Fill}{16}{subsubsection.8.1.2.1}
+\contentsline {subsubsection}{\numberline {8.1.2.2}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Init}{17}{subsubsection.8.1.2.2}
+\contentsline {subsubsection}{\numberline {8.1.2.3}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Empty}{17}{subsubsection.8.1.2.3}
+\contentsline {subsubsection}{\numberline {8.1.2.4}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Full}{17}{subsubsection.8.1.2.4}
+\contentsline {subsubsection}{\numberline {8.1.2.5}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mean}{17}{subsubsection.8.1.2.5}
+\contentsline {subsubsection}{\numberline {8.1.2.6}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mean\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}S}{18}{subsubsection.8.1.2.6}
+\contentsline {subsubsection}{\numberline {8.1.2.7}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Read}{18}{subsubsection.8.1.2.7}
+\contentsline {subsubsection}{\numberline {8.1.2.8}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}From\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Index}{19}{subsubsection.8.1.2.8}
+\contentsline {subsubsection}{\numberline {8.1.2.9}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Write}{19}{subsubsection.8.1.2.9}
+\contentsline {subsubsection}{\numberline {8.1.2.10}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Write\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}To\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Index}{19}{subsubsection.8.1.2.10}
+\contentsline {section}{\numberline {8.2}k\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffer/k\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffer.h File Reference}{20}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Detailed Description}{22}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Enumeration Type Documentation}{22}{subsection.8.2.2}
+\contentsline {subsubsection}{\numberline {8.2.2.1}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Status\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}t}{22}{subsubsection.8.2.2.1}
+\contentsline {subsection}{\numberline {8.2.3}Function Documentation}{22}{subsection.8.2.3}
+\contentsline {subsubsection}{\numberline {8.2.3.1}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Fill}{22}{subsubsection.8.2.3.1}
+\contentsline {subsubsection}{\numberline {8.2.3.2}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Init}{23}{subsubsection.8.2.3.2}
+\contentsline {subsubsection}{\numberline {8.2.3.3}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Empty}{23}{subsubsection.8.2.3.3}
+\contentsline {subsubsection}{\numberline {8.2.3.4}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Full}{23}{subsubsection.8.2.3.4}
+\contentsline {subsubsection}{\numberline {8.2.3.5}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mean}{23}{subsubsection.8.2.3.5}
+\contentsline {subsubsection}{\numberline {8.2.3.6}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Mean\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}S}{24}{subsubsection.8.2.3.6}
+\contentsline {subsubsection}{\numberline {8.2.3.7}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Read}{24}{subsubsection.8.2.3.7}
+\contentsline {subsubsection}{\numberline {8.2.3.8}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}From\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Index}{25}{subsubsection.8.2.3.8}
+\contentsline {subsubsection}{\numberline {8.2.3.9}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Write}{25}{subsubsection.8.2.3.9}
+\contentsline {subsubsection}{\numberline {8.2.3.10}buffer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Write\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}To\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Index}{25}{subsubsection.8.2.3.10}
+\contentsline {chapter}{Index}{27}{section*.8}

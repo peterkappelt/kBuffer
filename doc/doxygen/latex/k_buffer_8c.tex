@@ -7,11 +7,12 @@ A universal ringbuffer library.
 
 {\ttfamily \#include \char`\"{}k\+Buffer.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
 Include dependency graph for k\+Buffer.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{k_buffer_8c__incl}
+\includegraphics[width=268pt]{k_buffer_8c__incl}
 \end{center}
 \end{figure}
 \subsection*{Functions}
@@ -31,7 +32,13 @@ uint8\+\_\+t \hyperlink{k_buffer_8c_ac69b8a12a33d0cf0a5dab8feb4f7b020}{buffer\+I
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_a9d6410a89adf65a3ef12340ecb9bbd55}{buffer\+Write} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} data)
 \begin{DoxyCompactList}\small\item\em add data to the end of the ringbuffer \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_a9b80be9033ccd6b5a101f811520ab4cc}{buffer\+Read} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$data)
-\begin{DoxyCompactList}\small\item\em read data from the beginning of the buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em read data from the beginning of the buffer \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_ac806d926fd21729feb18f8e7738e76b4}{buffer\+Fill} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} data, uint8\+\_\+t silent)
+\begin{DoxyCompactList}\small\item\em fill the whole buffer with given dummy data. \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_a1389f5c08210e077301c35bc3b43f681}{buffer\+Mean} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$mean\+Out)
+\begin{DoxyCompactList}\small\item\em take the average of the whole buffer \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_a1da694b34c0a52809c923d2d149d1348}{buffer\+Mean\+R\+M\+S} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$mean\+Out)
+\begin{DoxyCompactList}\small\item\em take the root mean square of the whole buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -49,6 +56,38 @@ Peter Kappelt 2016; M\+I\+T License (see L\+I\+C\+E\+N\+S\+E.\+txt in the root o
 
 
 \subsection{Function Documentation}
+\hypertarget{k_buffer_8c_ac806d926fd21729feb18f8e7738e76b4}{}\index{k\+Buffer.\+c@{k\+Buffer.\+c}!buffer\+Fill@{buffer\+Fill}}
+\index{buffer\+Fill@{buffer\+Fill}!k\+Buffer.\+c@{k\+Buffer.\+c}}
+\subsubsection[{buffer\+Fill}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Fill (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{{\bf buffer\+Datatype}}]{data, }
+\item[{uint8\+\_\+t}]{silent}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8c_ac806d926fd21729feb18f8e7738e76b4}
+
+
+fill the whole buffer with given dummy data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+{\em data} & data to fill the buffer with \\
+\hline
+{\em silent} & if this parameter is 1, the buffer will be filled with data, but the write pointer stays at its current position (usefull, if you take the mean but the buffer is not full yet. You can just prefill it, the mean will be taken with the prefilled values) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+O\+K} & it worked as expected \\
+\hline
+{\em buffer\+Not\+Initialized} & the buffer wasn\textquotesingle{}t initialized \\
+\hline
+\end{DoxyRetVals}
 \hypertarget{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{}\index{k\+Buffer.\+c@{k\+Buffer.\+c}!buffer\+Init@{buffer\+Init}}
 \index{buffer\+Init@{buffer\+Init}!k\+Buffer.\+c@{k\+Buffer.\+c}}
 \subsubsection[{buffer\+Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Init (
@@ -125,6 +164,68 @@ Checks, wheter the buffer is full.
 {\em 0} & buffer is not full \\
 \hline
 \end{DoxyRetVals}
+\hypertarget{k_buffer_8c_a1389f5c08210e077301c35bc3b43f681}{}\index{k\+Buffer.\+c@{k\+Buffer.\+c}!buffer\+Mean@{buffer\+Mean}}
+\index{buffer\+Mean@{buffer\+Mean}!k\+Buffer.\+c@{k\+Buffer.\+c}}
+\subsubsection[{buffer\+Mean}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Mean (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{{\bf buffer\+Datatype} $\ast$}]{mean\+Out}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8c_a1389f5c08210e077301c35bc3b43f681}
+
+
+take the average of the whole buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+{\em mean\+Out} & pointer to a variable, where the mean will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+O\+K} & it worked as expected, the mean is stored at the given variable \\
+\hline
+{\em buffer\+Not\+Initialized} & the buffer is not initialized \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]The sum of the buffer is taken. Take precautions, that this variable won\textquotesingle{}t overflow \end{DoxyRefDesc}
+\hypertarget{k_buffer_8c_a1da694b34c0a52809c923d2d149d1348}{}\index{k\+Buffer.\+c@{k\+Buffer.\+c}!buffer\+Mean\+R\+M\+S@{buffer\+Mean\+R\+M\+S}}
+\index{buffer\+Mean\+R\+M\+S@{buffer\+Mean\+R\+M\+S}!k\+Buffer.\+c@{k\+Buffer.\+c}}
+\subsubsection[{buffer\+Mean\+R\+M\+S}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Mean\+R\+M\+S (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{{\bf buffer\+Datatype} $\ast$}]{mean\+Out}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8c_a1da694b34c0a52809c923d2d149d1348}
+
+
+take the root mean square of the whole buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+{\em mean\+Out} & pointer to a variable, where the mean will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+O\+K} & it worked as expected, the mean is stored at the given variable \\
+\hline
+{\em buffer\+Not\+Initialized} & the buffer is not initialized \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000002}{Bug}]The sum of squared buffer elements is taken. Take precautions, that this variable won\textquotesingle{}t overflow \end{DoxyRefDesc}
 \hypertarget{k_buffer_8c_a9b80be9033ccd6b5a101f811520ab4cc}{}\index{k\+Buffer.\+c@{k\+Buffer.\+c}!buffer\+Read@{buffer\+Read}}
 \index{buffer\+Read@{buffer\+Read}!k\+Buffer.\+c@{k\+Buffer.\+c}}
 \subsubsection[{buffer\+Read}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Read (

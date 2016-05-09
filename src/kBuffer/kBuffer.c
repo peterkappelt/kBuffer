@@ -19,12 +19,35 @@
  * bufferWrite();<br>
  * bufferRead();<br>
  * <br>
+ * bufferFill();
+ * <br>
  * bufferIsFull()<br>
  * bufferIsEmpty()<br>
+ * <br>
  * bufferWriteToIndex()<br>
  * bufferReadFromIndex()<br>
- * @section usage Usage and Examples
- * @subsection init Initializing a ringbuffer
+ * <br>
+ * bufferMean()<br>
+ * bufferMeanRMS()<br>
+ * @section usage Usage
+ * Have a look @ref fundamental_usage for an explenation of the main kBuffer functions (with some examples)<br>
+ * If you want to take the mean of your buffer, have a look at @ref mean
+ * @section example Example code
+ * An example code project is available under ../../test/x86. It isn't well documented, but you can compile it for your system.
+ */
+
+/**
+ * @page fundamental_usage Fundamental Usage
+ * @section datatype Buffer datatype definition
+ * A ringbuffer consists of variables, which can be accessed in a continuous way.<br>
+ * You have to define, which datatype you want to have the elements.<br>
+ * By default, the elements are unsigned 16bit integers (uint16_t).<br>
+ * The datatype is defined in kBuffer.h :
+ * @code
+ * #define bufferDatatype uint16_t
+ * @endcode
+ * Instead of uint16_t, you can insert (almost) any datatype you want.
+ * @section init Initializing a ringbuffer
  * At first, you have to include the kBuffer library into your project.
  * This can be done by copying the files from src/kBuffer to your project's directory.
  * You can include the header as usual:
@@ -45,7 +68,7 @@
  *  do_something_there_was_an_error();
  * }
  * @endcode
- * @subsection write Writing data to the buffer
+ * @section write Writing data to the buffer
  * To write data to the buffer, you can use the bufferWrite() function:
  * @code
  * #include "kBuffer.h"
@@ -61,7 +84,7 @@
  *  return 0;
  * }
  * @endcode
- * @subsection read Reading data from the buffer
+ * @section read Reading data from the buffer
  * To read data from the buffer, you can use the bufferRead() function:
  * @code
  * #include "kBuffer.h"
@@ -80,13 +103,37 @@
  *  return 0;
  * }
  * @endcode
- * @section example Example code
- * An example code project is available under ../../test/x86. It isn't well documented, but you can compile it for your system.
+ */
+
+/**
+ * @page mean Mean of buffer
+ * @section enabling Enabling of mean functions
+ * Notice: Only enable the mean functions, if the element datatype (i.e. buffer datatype) is some sort of numeric type (i.e. integer, float, ...)
+ * To enable the buffer mean functions, you have to uncommented the following define in kBuffer.h:
+ * @code
+ * #define BUFFER_ENABLE_MEAN
+ * @endcode
+ * @section caution Caution!
+ * There might be problems with this functions. The sum of the values (or the squared values) must be stored in a variable.<br>
+ * This variable is currently a long, but under certain conditions it might overflow.<br>
+ * You could replace it with an "unsigned long long" (or something smaller)
+ * @section meanfunc Mean of the buffer
+ * You can take the mean of the buffer with the function bufferMean():
+ * @code
+ * uint16_t mean;
+ * 
+ * bufferMean(&buffer, &mean);
+ * @endcode
+ * You can also get the RMS (Root Mean Square), by calling the function bufferMeanRMS() (Parameters are the same)
  */
 
 #include "kBuffer.h"
 
 #include <stdlib.h>
+
+#ifdef BUFFER_ENABLE_MEAN
+    #include <math.h>
+#endif
 
 /**
  * @brief init a new buffer
@@ -107,6 +154,7 @@ bufferStatus_t bufferInit(buffer_t* buffer, uint16_t bufferSize){
     if(buffer->data != NULL){
         buffer->isInitialized = 1;
         buffer->length = bufferSize;
+        bufferFill(buffer, 0, 1);
         return bufferOK;
     }else{
         buffer->isInitialized = 0;
@@ -237,3 +285,89 @@ bufferStatus_t bufferRead(buffer_t* buffer, bufferDatatype* data){
         return bufferEmpty;
     }
 }
+
+/**
+ * @brief fill the whole buffer with given dummy data. 
+ * @param   buffer  pointer buffer_t instance
+ * @param   data    data to fill the buffer with
+ * @param   silent  if this parameter is 1, the buffer will be filled with data, but the write pointer stays at its current position (usefull, if you take the mean but the buffer is not full yet. You can just prefill it, the mean will be taken with the prefilled values)
+ * @return  an element of #bufferStatus_t
+ * @retval  bufferOK    it worked as expected
+ * @retval  bufferNotInitialized    the buffer wasn't initialized
+ */
+bufferStatus_t bufferFill(buffer_t* buffer, bufferDatatype data, uint8_t silent){
+    if(buffer->isInitialized){
+        if(silent){
+            uint16_t i;
+            for(i = 0; i < buffer->length; i++){
+                bufferWriteToIndex(buffer, i, data);
+            }
+        }else{
+            bufferStatus_t status = bufferOK;
+            while(status == bufferOK){
+                status = bufferWrite(buffer, data);
+            }
+        }
+        return bufferOK;
+    }else{
+        return bufferNotInitialized;
+    }
+}
+
+#ifdef BUFFER_ENABLE_MEAN
+
+/**
+ * @brief take the average of the whole buffer
+ * @param   buffer  pointer to a buffer_t instance
+ * @param   meanOut pointer to a variable, where the mean will be stored
+ * @return  a element of #bufferStatus_t
+ * @retval  bufferOK    it worked as expected, the mean is stored at the given variable
+ * @retval  bufferNotInitialized    the buffer is not initialized
+ * @bug The sum of the buffer is taken. Take precautions, that this variable won't overflow
+ */
+bufferStatus_t bufferMean(buffer_t* buffer, bufferDatatype* meanOut){
+    long sum = 0;
+    bufferDatatype temp;
+    uint16_t i;
+    bufferStatus_t status;
+    
+    for(i = 0; i < buffer->length; i++){
+        status = bufferReadFromIndex(buffer, i, &temp);
+        if(status =! bufferOK){
+            return status;
+        }
+        sum += temp;
+    }
+    
+    *meanOut = sum / buffer->length;
+}
+
+/**
+ * @brief take the root mean square of the whole buffer
+ * @param   buffer  pointer to a buffer_t instance
+ * @param   meanOut pointer to a variable, where the mean will be stored
+ * @return  a element of #bufferStatus_t
+ * @retval  bufferOK    it worked as expected, the mean is stored at the given variable
+ * @retval  bufferNotInitialized    the buffer is not initialized
+ * @bug The sum of squared buffer elements is taken. Take precautions, that this variable won't overflow
+ */
+bufferStatus_t bufferMeanRMS(buffer_t* buffer, bufferDatatype* meanOut){
+    long sum = 0;
+    bufferDatatype temp;
+    uint16_t i;
+    bufferStatus_t status;
+    
+    for(i = 0; i < buffer->length; i++){
+        status = bufferReadFromIndex(buffer, i, &temp);
+        if(status =! bufferOK){
+            return status;
+        }
+        sum += (temp * temp);
+    }
+    
+    sum = sum / buffer->length;
+    
+    *meanOut = (bufferDatatype)sqrt(sum);
+}
+
+#endif

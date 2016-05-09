@@ -1,0 +1,16 @@
+\hypertarget{mean_enabling}{}\section{Enabling of mean functions}\label{mean_enabling}
+Notice\+: Only enable the mean functions, if the element datatype (i.\+e. buffer datatype) is some sort of numeric type (i.\+e. integer, float, ...) To enable the buffer mean functions, you have to uncommented the following define in \hyperlink{k_buffer_8h}{k\+Buffer.\+h}\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define BUFFER\_ENABLE\_MEAN}
+\end{DoxyCode}
+ \hypertarget{mean_caution}{}\section{Caution!}\label{mean_caution}
+There might be problems with this functions. The sum of the values (or the squared values) must be stored in a variable.~\newline
+ This variable is currently a long, but under certain conditions it might overflow.~\newline
+ You could replace it with an \char`\"{}unsigned long long\char`\"{} (or something smaller) \hypertarget{mean_meanfunc}{}\section{Mean of the buffer}\label{mean_meanfunc}
+You can take the mean of the buffer with the function \hyperlink{k_buffer_8c_a1389f5c08210e077301c35bc3b43f681}{buffer\+Mean()}\+: 
+\begin{DoxyCode}
+uint16\_t mean;
+
+\hyperlink{k_buffer_8c_a1389f5c08210e077301c35bc3b43f681}{bufferMean}(&buffer, &mean);
+\end{DoxyCode}
+ You can also get the R\+M\+S (Root Mean Square), by calling the function \hyperlink{k_buffer_8c_a1da694b34c0a52809c923d2d149d1348}{buffer\+Mean\+R\+M\+S()} (Parameters are the same) 

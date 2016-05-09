@@ -18,6 +18,15 @@
 #define bufferDatatype uint16_t
 
 /**
+ * @brief Enables mean/ averaging functions. 
+ * If you uncomment this define, the following functions will be compiled.<br>
+ * Only enable it, if bufferDatatype is some sort of numeric datatype (integer, float, ...)<br>
+ * bufferMean();<br>
+ * bufferMeanRMS();<br>
+ */
+#define BUFFER_ENABLE_MEAN
+
+/**
  * @brief Struct for buffer handling.
  * If you need a ringbuffer in your software, you should instantiate a buffer_t, and run the neccessary functions with a pointer to your instance
  */
@@ -67,5 +76,11 @@ uint8_t bufferIsEmpty(buffer_t* buffer);
 uint8_t bufferIsFull(buffer_t* buffer);
 bufferStatus_t bufferWrite(buffer_t* buffer, bufferDatatype data);
 bufferStatus_t bufferRead(buffer_t* buffer, bufferDatatype* data);
+bufferStatus_t bufferFill(buffer_t* buffer, bufferDatatype data, uint8_t silent);
+
+#ifdef BUFFER_ENABLE_MEAN
+bufferStatus_t bufferMean(buffer_t* buffer, bufferDatatype* meanOut);
+bufferStatus_t bufferMeanRMS(buffer_t* buffer, bufferDatatype* meanOut);
+#endif
 
 #endif
