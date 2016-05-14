@@ -35,6 +35,8 @@ uint8\+\_\+t \hyperlink{k_buffer_8c_ac69b8a12a33d0cf0a5dab8feb4f7b020}{buffer\+I
 \begin{DoxyCompactList}\small\item\em read data from the beginning of the buffer \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_ac806d926fd21729feb18f8e7738e76b4}{buffer\+Fill} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} data, uint8\+\_\+t silent)
 \begin{DoxyCompactList}\small\item\em fill the whole buffer with given dummy data. \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_afa8bb2b701cd9b7f871c12e0fabd66e1}{buffer\+Available} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t $\ast$available)
+\begin{DoxyCompactList}\small\item\em return, how many elements are stored and available in the buffer \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_a1389f5c08210e077301c35bc3b43f681}{buffer\+Mean} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$mean\+Out)
 \begin{DoxyCompactList}\small\item\em take the average of the whole buffer \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_a1da694b34c0a52809c923d2d149d1348}{buffer\+Mean\+R\+M\+S} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$mean\+Out)
@@ -56,6 +58,35 @@ Peter Kappelt 2016; M\+I\+T License (see L\+I\+C\+E\+N\+S\+E.\+txt in the root o
 
 
 \subsection{Function Documentation}
+\hypertarget{k_buffer_8c_afa8bb2b701cd9b7f871c12e0fabd66e1}{}\index{k\+Buffer.\+c@{k\+Buffer.\+c}!buffer\+Available@{buffer\+Available}}
+\index{buffer\+Available@{buffer\+Available}!k\+Buffer.\+c@{k\+Buffer.\+c}}
+\subsubsection[{buffer\+Available}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Available (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{uint16\+\_\+t $\ast$}]{available}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8c_afa8bb2b701cd9b7f871c12e0fabd66e1}
+
+
+return, how many elements are stored and available in the buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+{\em available} & pointer to a variable where the number of available elements should be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+O\+K} & it worked as expected \\
+\hline
+{\em buffer\+Not\+Initialized} & the buffer wasn\textquotesingle{}t initialized \\
+\hline
+\end{DoxyRetVals}
 \hypertarget{k_buffer_8c_ac806d926fd21729feb18f8e7738e76b4}{}\index{k\+Buffer.\+c@{k\+Buffer.\+c}!buffer\+Fill@{buffer\+Fill}}
 \index{buffer\+Fill@{buffer\+Fill}!k\+Buffer.\+c@{k\+Buffer.\+c}}
 \subsubsection[{buffer\+Fill}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Fill (

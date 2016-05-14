@@ -314,6 +314,23 @@ bufferStatus_t bufferFill(buffer_t* buffer, bufferDatatype data, uint8_t silent)
     }
 }
 
+/**
+ * @brief return, how many elements are stored and available in the buffer
+ * @param   buffer      pointer to a buffer_t instance
+ * @param   available   pointer to a variable where the number of available elements should be stored
+ * @return  an element of #bufferStatus_t
+ * @retval  bufferOK                it worked as expected
+ * @retval  bufferNotInitialized    the buffer wasn't initialized
+ */
+bufferStatus_t bufferAvailable(buffer_t* buffer, uint16_t* available){
+    if(buffer->isInitialized){
+        *available = buffer->datacount;
+        return bufferOK;
+    }else{
+        return bufferNotInitialized;
+    }
+}
+
 #ifdef BUFFER_ENABLE_MEAN
 
 /**
@@ -333,13 +350,15 @@ bufferStatus_t bufferMean(buffer_t* buffer, bufferDatatype* meanOut){
     
     for(i = 0; i < buffer->length; i++){
         status = bufferReadFromIndex(buffer, i, &temp);
-        if(status =! bufferOK){
+        if(status != bufferOK){
             return status;
         }
         sum += temp;
     }
     
     *meanOut = sum / buffer->length;
+    
+    return bufferOK;
 }
 
 /**
@@ -359,7 +378,7 @@ bufferStatus_t bufferMeanRMS(buffer_t* buffer, bufferDatatype* meanOut){
     
     for(i = 0; i < buffer->length; i++){
         status = bufferReadFromIndex(buffer, i, &temp);
-        if(status =! bufferOK){
+        if(status != bufferOK){
             return status;
         }
         sum += (temp * temp);
@@ -368,6 +387,8 @@ bufferStatus_t bufferMeanRMS(buffer_t* buffer, bufferDatatype* meanOut){
     sum = sum / buffer->length;
     
     *meanOut = (bufferDatatype)sqrt(sum);
+    
+    return bufferOK;
 }
 
 #endif

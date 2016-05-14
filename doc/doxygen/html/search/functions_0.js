@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['bufferavailable',['bufferAvailable',['../k_buffer_8c.html#afa8bb2b701cd9b7f871c12e0fabd66e1',1,'bufferAvailable(buffer_t *buffer, uint16_t *available):&#160;kBuffer.c'],['../k_buffer_8h.html#afa8bb2b701cd9b7f871c12e0fabd66e1',1,'bufferAvailable(buffer_t *buffer, uint16_t *available):&#160;kBuffer.c']]],
   ['bufferfill',['bufferFill',['../k_buffer_8c.html#ac806d926fd21729feb18f8e7738e76b4',1,'bufferFill(buffer_t *buffer, bufferDatatype data, uint8_t silent):&#160;kBuffer.c'],['../k_buffer_8h.html#ac806d926fd21729feb18f8e7738e76b4',1,'bufferFill(buffer_t *buffer, bufferDatatype data, uint8_t silent):&#160;kBuffer.c']]],
   ['bufferinit',['bufferInit',['../k_buffer_8c.html#aec18d6ea571b1326dbeb7ca15f4969c0',1,'bufferInit(buffer_t *buffer, uint16_t bufferSize):&#160;kBuffer.c'],['../k_buffer_8h.html#aec18d6ea571b1326dbeb7ca15f4969c0',1,'bufferInit(buffer_t *buffer, uint16_t bufferSize):&#160;kBuffer.c']]],
   ['bufferisempty',['bufferIsEmpty',['../k_buffer_8c.html#a5c599b9386c73ccd7b5eeb25f6cca38e',1,'bufferIsEmpty(buffer_t *buffer):&#160;kBuffer.c'],['../k_buffer_8h.html#a5c599b9386c73ccd7b5eeb25f6cca38e',1,'bufferIsEmpty(buffer_t *buffer):&#160;kBuffer.c']]],

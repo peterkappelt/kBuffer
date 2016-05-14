@@ -71,7 +71,7 @@ int main(void){
     uint16_t data;
     bufferStatus_t status;
     
-    printf("Commands: \n\t [q]uit\n\t [w]rite data\n\t [r]ead data\n\t [v]erbose buffer\n");
+    printf("Commands: \n\t [q]uit\n\t [w]rite data\n\t [r]ead data\n\t [a]vailable datacount\n\t [v]erbose buffer\n");
     
     while(!flag){
         printf("Input: ");
@@ -105,6 +105,10 @@ int main(void){
             }else{
                 printf("Other error\n");
             }
+        }else if(cmd == 'a'){
+            printf("Available elements: ");
+            bufferAvailable(&buffer, &data);
+            printf("%d\n", data);
         }else if(cmd == 'v'){
             verboseBuffer(&buffer);
         }else{

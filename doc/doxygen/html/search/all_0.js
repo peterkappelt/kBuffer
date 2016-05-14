@@ -2,6 +2,7 @@ var searchData=
 [
   ['buffer_5fenable_5fmean',['BUFFER_ENABLE_MEAN',['../k_buffer_8h.html#a82cc29a07ae3edcaf59d1e15c9ac80cf',1,'kBuffer.h']]],
   ['buffer_5ft',['buffer_t',['../structbuffer__t.html',1,'']]],
+  ['bufferavailable',['bufferAvailable',['../k_buffer_8c.html#afa8bb2b701cd9b7f871c12e0fabd66e1',1,'bufferAvailable(buffer_t *buffer, uint16_t *available):&#160;kBuffer.c'],['../k_buffer_8h.html#afa8bb2b701cd9b7f871c12e0fabd66e1',1,'bufferAvailable(buffer_t *buffer, uint16_t *available):&#160;kBuffer.c']]],
   ['bufferdatatype',['bufferDatatype',['../k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1',1,'kBuffer.h']]],
   ['bufferempty',['bufferEmpty',['../k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6a5f17467af6ed92f0d7888dcb7feb4002',1,'kBuffer.h']]],
   ['buffererror',['bufferError',['../k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6a0620283513c857f87186899770dd2c2e',1,'kBuffer.h']]],
