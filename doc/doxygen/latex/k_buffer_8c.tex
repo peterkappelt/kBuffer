@@ -37,6 +37,8 @@ uint8\+\_\+t \hyperlink{k_buffer_8c_ac69b8a12a33d0cf0a5dab8feb4f7b020}{buffer\+I
 \begin{DoxyCompactList}\small\item\em fill the whole buffer with given dummy data. \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_afa8bb2b701cd9b7f871c12e0fabd66e1}{buffer\+Available} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t $\ast$available)
 \begin{DoxyCompactList}\small\item\em return, how many elements are stored and available in the buffer \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_a5ecef1fd460ed9635269abce02be866f}{buffer\+Peek} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$data)
+\begin{DoxyCompactList}\small\item\em have a look at the next element in the buffer, but do not increase the read pointer \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_a1389f5c08210e077301c35bc3b43f681}{buffer\+Mean} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$mean\+Out)
 \begin{DoxyCompactList}\small\item\em take the average of the whole buffer \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8c_a1da694b34c0a52809c923d2d149d1348}{buffer\+Mean\+R\+M\+S} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$mean\+Out)
@@ -257,6 +259,37 @@ a element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+S
 \end{DoxyRetVals}
 \begin{DoxyRefDesc}{Bug}
 \item[\hyperlink{bug__bug000002}{Bug}]The sum of squared buffer elements is taken. Take precautions, that this variable won\textquotesingle{}t overflow \end{DoxyRefDesc}
+\hypertarget{k_buffer_8c_a5ecef1fd460ed9635269abce02be866f}{}\index{k\+Buffer.\+c@{k\+Buffer.\+c}!buffer\+Peek@{buffer\+Peek}}
+\index{buffer\+Peek@{buffer\+Peek}!k\+Buffer.\+c@{k\+Buffer.\+c}}
+\subsubsection[{buffer\+Peek}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Peek (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{{\bf buffer\+Datatype} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{k_buffer_8c_a5ecef1fd460ed9635269abce02be866f}
+
+
+have a look at the next element in the buffer, but do not increase the read pointer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+{\em data} & pointer to a variable where data should be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+O\+K} & it worked as expected \\
+\hline
+{\em buffer\+Not\+Initialized} & the \hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init()} method hasn\textquotesingle{}t been called or failed before \\
+\hline
+{\em buffer\+Empty} & the buffer is empty an no more data can be read \\
+\hline
+\end{DoxyRetVals}
 \hypertarget{k_buffer_8c_a9b80be9033ccd6b5a101f811520ab4cc}{}\index{k\+Buffer.\+c@{k\+Buffer.\+c}!buffer\+Read@{buffer\+Read}}
 \index{buffer\+Read@{buffer\+Read}!k\+Buffer.\+c@{k\+Buffer.\+c}}
 \subsubsection[{buffer\+Read}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Read (

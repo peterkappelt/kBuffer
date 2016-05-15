@@ -16,6 +16,7 @@ var searchData=
   ['buffermemoryallocationfailed',['bufferMemoryAllocationFailed',['../k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6a6cca9e2a7ecf10052a07be6c0eb252b5',1,'kBuffer.h']]],
   ['buffernotinitialized',['bufferNotInitialized',['../k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6a4443de2adc482ee2e06cedc60cd5a299',1,'kBuffer.h']]],
   ['bufferok',['bufferOK',['../k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6a69e32851bd2f089b06555decd80aac1b',1,'kBuffer.h']]],
+  ['bufferpeek',['bufferPeek',['../k_buffer_8c.html#a5ecef1fd460ed9635269abce02be866f',1,'kBuffer.c']]],
   ['bufferread',['bufferRead',['../k_buffer_8c.html#a9b80be9033ccd6b5a101f811520ab4cc',1,'bufferRead(buffer_t *buffer, bufferDatatype *data):&#160;kBuffer.c'],['../k_buffer_8h.html#a9b80be9033ccd6b5a101f811520ab4cc',1,'bufferRead(buffer_t *buffer, bufferDatatype *data):&#160;kBuffer.c']]],
   ['bufferreadfromindex',['bufferReadFromIndex',['../k_buffer_8c.html#aa0d7e2a4b6fd3da2822d7f968be74e5c',1,'bufferReadFromIndex(buffer_t *buffer, uint16_t index, bufferDatatype *data):&#160;kBuffer.c'],['../k_buffer_8h.html#aa0d7e2a4b6fd3da2822d7f968be74e5c',1,'bufferReadFromIndex(buffer_t *buffer, uint16_t index, bufferDatatype *data):&#160;kBuffer.c']]],
   ['bufferstatus_5ft',['bufferStatus_t',['../k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6',1,'kBuffer.h']]],

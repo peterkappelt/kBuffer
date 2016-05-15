@@ -16,16 +16,19 @@
  * <br>
  * bufferInit()<br>
  * <br>
- * bufferWrite();<br>
- * bufferRead();<br>
+ * bufferWrite()<br>
+ * bufferRead()<br>
+ * bufferPeek()<br>
  * <br>
- * bufferFill();
+ * bufferFill()
  * <br>
  * bufferIsFull()<br>
  * bufferIsEmpty()<br>
  * <br>
  * bufferWriteToIndex()<br>
  * bufferReadFromIndex()<br>
+ * <br>
+ * bufferAvailable()<br>
  * <br>
  * bufferMean()<br>
  * bufferMeanRMS()<br>
@@ -328,6 +331,24 @@ bufferStatus_t bufferAvailable(buffer_t* buffer, uint16_t* available){
         return bufferOK;
     }else{
         return bufferNotInitialized;
+    }
+}
+
+/**
+ * @brief have a look at the next element in the buffer, but do not increase the read pointer
+ * @param   buffer  pointer to a buffer_t instance
+ * @param   data    pointer to a variable where data should be stored
+ * @return  a element of #bufferStatus_t
+ * @retval  bufferOK    it worked as expected
+ * @retval  bufferNotInitialized    the bufferInit() method hasn't been called or failed before
+ * @retval  bufferEmpty  the buffer is empty an no more data can be read
+ */
+bufferStatus_t bufferPeek(buffer_t* buffer, bufferDatatype* data){
+    if(!bufferIsEmpty(buffer)){
+        bufferStatus_t temp = bufferReadFromIndex(buffer, buffer->readPointer, data);
+        return temp;
+    }else{
+        return bufferEmpty;
     }
 }
 
