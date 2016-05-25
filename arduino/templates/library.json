@@ -1,0 +1,16 @@
+{
+  "name": "kBuffer",
+  "keywords": "buffer",
+  "description": "Universal ringbuffer library",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/peterkappelt/kBuffer.git"
+  },
+  "frameworks": "arduino",
+  "platforms":
+  [
+    "atmelavr",
+    "teensy"
+  ]
+}

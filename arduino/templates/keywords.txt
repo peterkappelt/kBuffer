@@ -1,0 +1,16 @@
+buffer_t	KEYWORD1
+bufferStatus_t	KEYWORD1
+
+bufferInit()	KEYWORD2
+bufferWrite()	KEYWORD2
+bufferWriteOverwrite()	KEYWORD2
+bufferRead()	KEYWORD2
+bufferPeek()	KEYWORD2
+bufferFill()	KEYWORD2
+bufferIsFull()	KEYWORD2
+bufferIsEmpty()	KEYWORD2
+bufferWriteToIndex()	KEYWORD2
+bufferReadFromIndex()	KEYWORD2
+bufferAvailable()	KEYWORD2
+bufferMean()	KEYWORD2
+bufferMeanRMS()	KEYWORD2

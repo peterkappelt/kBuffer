@@ -17,6 +17,7 @@
  * bufferInit()<br>
  * <br>
  * bufferWrite()<br>
+ * bufferWriteOverwrite()<br>
  * bufferRead()<br>
  * bufferPeek()<br>
  * <br>
