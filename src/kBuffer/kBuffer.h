@@ -79,6 +79,7 @@ bufferStatus_t bufferReadFromIndex(buffer_t* buffer, uint16_t index, bufferDatat
 uint8_t bufferIsEmpty(buffer_t* buffer);
 uint8_t bufferIsFull(buffer_t* buffer);
 bufferStatus_t bufferWrite(buffer_t* buffer, bufferDatatype data);
+bufferStatus_t bufferWriteOverwrite(buffer_t* buffer, bufferDatatype data);
 bufferStatus_t bufferRead(buffer_t* buffer, bufferDatatype* data);
 bufferStatus_t bufferFill(buffer_t* buffer, bufferDatatype data, uint8_t silent);
 bufferStatus_t bufferAvailable(buffer_t* buffer, uint16_t* available);

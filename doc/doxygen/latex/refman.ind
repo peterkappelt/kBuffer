@@ -3,53 +3,56 @@
   \item {buffer\+\_\+t}, \hyperpage{13}
   \item {buffer\+Available}
     \subitem {k\+Buffer.\+c}, \hyperpage{16}
-    \subitem {k\+Buffer.\+h}, \hyperpage{23}
+    \subitem {k\+Buffer.\+h}, \hyperpage{24}
   \item {buffer\+Empty}
-    \subitem {k\+Buffer.\+h}, \hyperpage{23}
+    \subitem {k\+Buffer.\+h}, \hyperpage{24}
   \item {buffer\+Error}
-    \subitem {k\+Buffer.\+h}, \hyperpage{23}
+    \subitem {k\+Buffer.\+h}, \hyperpage{24}
   \item {buffer\+Fill}
     \subitem {k\+Buffer.\+c}, \hyperpage{17}
-    \subitem {k\+Buffer.\+h}, \hyperpage{23}
+    \subitem {k\+Buffer.\+h}, \hyperpage{25}
   \item {buffer\+Full}
-    \subitem {k\+Buffer.\+h}, \hyperpage{23}
+    \subitem {k\+Buffer.\+h}, \hyperpage{24}
   \item {buffer\+Init}
     \subitem {k\+Buffer.\+c}, \hyperpage{17}
-    \subitem {k\+Buffer.\+h}, \hyperpage{24}
+    \subitem {k\+Buffer.\+h}, \hyperpage{25}
   \item {buffer\+Is\+Empty}
-    \subitem {k\+Buffer.\+c}, \hyperpage{17}
-    \subitem {k\+Buffer.\+h}, \hyperpage{24}
+    \subitem {k\+Buffer.\+c}, \hyperpage{18}
+    \subitem {k\+Buffer.\+h}, \hyperpage{26}
   \item {buffer\+Is\+Full}
     \subitem {k\+Buffer.\+c}, \hyperpage{18}
-    \subitem {k\+Buffer.\+h}, \hyperpage{24}
+    \subitem {k\+Buffer.\+h}, \hyperpage{26}
   \item {buffer\+Mean}
     \subitem {k\+Buffer.\+c}, \hyperpage{18}
-    \subitem {k\+Buffer.\+h}, \hyperpage{24}
-  \item {buffer\+Mean\+R\+M\+S}
-    \subitem {k\+Buffer.\+c}, \hyperpage{18}
-    \subitem {k\+Buffer.\+h}, \hyperpage{25}
+    \subitem {k\+Buffer.\+h}, \hyperpage{26}
+  \item {buffer\+Mean\+R\+MS}
+    \subitem {k\+Buffer.\+c}, \hyperpage{19}
+    \subitem {k\+Buffer.\+h}, \hyperpage{27}
   \item {buffer\+Memory\+Allocation\+Failed}
-    \subitem {k\+Buffer.\+h}, \hyperpage{23}
+    \subitem {k\+Buffer.\+h}, \hyperpage{24}
   \item {buffer\+Not\+Initialized}
-    \subitem {k\+Buffer.\+h}, \hyperpage{23}
-  \item {buffer\+O\+K}
-    \subitem {k\+Buffer.\+h}, \hyperpage{23}
+    \subitem {k\+Buffer.\+h}, \hyperpage{24}
+  \item {buffer\+OK}
+    \subitem {k\+Buffer.\+h}, \hyperpage{24}
   \item {buffer\+Peek}
     \subitem {k\+Buffer.\+c}, \hyperpage{19}
   \item {buffer\+Read}
-    \subitem {k\+Buffer.\+c}, \hyperpage{19}
-    \subitem {k\+Buffer.\+h}, \hyperpage{25}
+    \subitem {k\+Buffer.\+c}, \hyperpage{20}
+    \subitem {k\+Buffer.\+h}, \hyperpage{27}
   \item {buffer\+Read\+From\+Index}
-    \subitem {k\+Buffer.\+c}, \hyperpage{19}
-    \subitem {k\+Buffer.\+h}, \hyperpage{26}
+    \subitem {k\+Buffer.\+c}, \hyperpage{20}
+    \subitem {k\+Buffer.\+h}, \hyperpage{28}
   \item {buffer\+Status\+\_\+t}
-    \subitem {k\+Buffer.\+h}, \hyperpage{23}
+    \subitem {k\+Buffer.\+h}, \hyperpage{24}
   \item {buffer\+Write}
     \subitem {k\+Buffer.\+c}, \hyperpage{20}
-    \subitem {k\+Buffer.\+h}, \hyperpage{26}
+    \subitem {k\+Buffer.\+h}, \hyperpage{28}
+  \item {buffer\+Write\+Overwrite}
+    \subitem {k\+Buffer.\+c}, \hyperpage{21}
+    \subitem {k\+Buffer.\+h}, \hyperpage{28}
   \item {buffer\+Write\+To\+Index}
-    \subitem {k\+Buffer.\+c}, \hyperpage{20}
-    \subitem {k\+Buffer.\+h}, \hyperpage{26}
+    \subitem {k\+Buffer.\+c}, \hyperpage{21}
+    \subitem {k\+Buffer.\+h}, \hyperpage{29}
 
   \indexspace
 
@@ -57,35 +60,37 @@
     \subitem {buffer\+Available}, \hyperpage{16}
     \subitem {buffer\+Fill}, \hyperpage{17}
     \subitem {buffer\+Init}, \hyperpage{17}
-    \subitem {buffer\+Is\+Empty}, \hyperpage{17}
+    \subitem {buffer\+Is\+Empty}, \hyperpage{18}
     \subitem {buffer\+Is\+Full}, \hyperpage{18}
     \subitem {buffer\+Mean}, \hyperpage{18}
-    \subitem {buffer\+Mean\+R\+M\+S}, \hyperpage{18}
+    \subitem {buffer\+Mean\+R\+MS}, \hyperpage{19}
     \subitem {buffer\+Peek}, \hyperpage{19}
-    \subitem {buffer\+Read}, \hyperpage{19}
-    \subitem {buffer\+Read\+From\+Index}, \hyperpage{19}
+    \subitem {buffer\+Read}, \hyperpage{20}
+    \subitem {buffer\+Read\+From\+Index}, \hyperpage{20}
     \subitem {buffer\+Write}, \hyperpage{20}
-    \subitem {buffer\+Write\+To\+Index}, \hyperpage{20}
+    \subitem {buffer\+Write\+Overwrite}, \hyperpage{21}
+    \subitem {buffer\+Write\+To\+Index}, \hyperpage{21}
   \item {k\+Buffer.\+h}
-    \subitem {buffer\+Available}, \hyperpage{23}
-    \subitem {buffer\+Empty}, \hyperpage{23}
-    \subitem {buffer\+Error}, \hyperpage{23}
-    \subitem {buffer\+Fill}, \hyperpage{23}
-    \subitem {buffer\+Full}, \hyperpage{23}
-    \subitem {buffer\+Init}, \hyperpage{24}
-    \subitem {buffer\+Is\+Empty}, \hyperpage{24}
-    \subitem {buffer\+Is\+Full}, \hyperpage{24}
-    \subitem {buffer\+Mean}, \hyperpage{24}
-    \subitem {buffer\+Mean\+R\+M\+S}, \hyperpage{25}
-    \subitem {buffer\+Memory\+Allocation\+Failed}, \hyperpage{23}
-    \subitem {buffer\+Not\+Initialized}, \hyperpage{23}
-    \subitem {buffer\+O\+K}, \hyperpage{23}
-    \subitem {buffer\+Read}, \hyperpage{25}
-    \subitem {buffer\+Read\+From\+Index}, \hyperpage{26}
-    \subitem {buffer\+Status\+\_\+t}, \hyperpage{23}
-    \subitem {buffer\+Write}, \hyperpage{26}
-    \subitem {buffer\+Write\+To\+Index}, \hyperpage{26}
+    \subitem {buffer\+Available}, \hyperpage{24}
+    \subitem {buffer\+Empty}, \hyperpage{24}
+    \subitem {buffer\+Error}, \hyperpage{24}
+    \subitem {buffer\+Fill}, \hyperpage{25}
+    \subitem {buffer\+Full}, \hyperpage{24}
+    \subitem {buffer\+Init}, \hyperpage{25}
+    \subitem {buffer\+Is\+Empty}, \hyperpage{26}
+    \subitem {buffer\+Is\+Full}, \hyperpage{26}
+    \subitem {buffer\+Mean}, \hyperpage{26}
+    \subitem {buffer\+Mean\+R\+MS}, \hyperpage{27}
+    \subitem {buffer\+Memory\+Allocation\+Failed}, \hyperpage{24}
+    \subitem {buffer\+Not\+Initialized}, \hyperpage{24}
+    \subitem {buffer\+OK}, \hyperpage{24}
+    \subitem {buffer\+Read}, \hyperpage{27}
+    \subitem {buffer\+Read\+From\+Index}, \hyperpage{28}
+    \subitem {buffer\+Status\+\_\+t}, \hyperpage{24}
+    \subitem {buffer\+Write}, \hyperpage{28}
+    \subitem {buffer\+Write\+Overwrite}, \hyperpage{28}
+    \subitem {buffer\+Write\+To\+Index}, \hyperpage{29}
   \item {k\+Buffer/k\+Buffer.\+c}, \hyperpage{15}
-  \item {k\+Buffer/k\+Buffer.\+h}, \hyperpage{21}
+  \item {k\+Buffer/k\+Buffer.\+h}, \hyperpage{22}
 
 \end{theindex}

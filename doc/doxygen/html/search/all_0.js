@@ -21,6 +21,7 @@ var searchData=
   ['bufferreadfromindex',['bufferReadFromIndex',['../k_buffer_8c.html#aa0d7e2a4b6fd3da2822d7f968be74e5c',1,'bufferReadFromIndex(buffer_t *buffer, uint16_t index, bufferDatatype *data):&#160;kBuffer.c'],['../k_buffer_8h.html#aa0d7e2a4b6fd3da2822d7f968be74e5c',1,'bufferReadFromIndex(buffer_t *buffer, uint16_t index, bufferDatatype *data):&#160;kBuffer.c']]],
   ['bufferstatus_5ft',['bufferStatus_t',['../k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6',1,'kBuffer.h']]],
   ['bufferwrite',['bufferWrite',['../k_buffer_8c.html#a9d6410a89adf65a3ef12340ecb9bbd55',1,'bufferWrite(buffer_t *buffer, bufferDatatype data):&#160;kBuffer.c'],['../k_buffer_8h.html#a9d6410a89adf65a3ef12340ecb9bbd55',1,'bufferWrite(buffer_t *buffer, bufferDatatype data):&#160;kBuffer.c']]],
+  ['bufferwriteoverwrite',['bufferWriteOverwrite',['../k_buffer_8c.html#af040a9062bc907adde9517c27c870be5',1,'bufferWriteOverwrite(buffer_t *buffer, bufferDatatype data):&#160;kBuffer.c'],['../k_buffer_8h.html#af040a9062bc907adde9517c27c870be5',1,'bufferWriteOverwrite(buffer_t *buffer, bufferDatatype data):&#160;kBuffer.c']]],
   ['bufferwritetoindex',['bufferWriteToIndex',['../k_buffer_8c.html#a8508583be1e356a243b0ce67254c516e',1,'bufferWriteToIndex(buffer_t *buffer, uint16_t index, bufferDatatype data):&#160;kBuffer.c'],['../k_buffer_8h.html#a8508583be1e356a243b0ce67254c516e',1,'bufferWriteToIndex(buffer_t *buffer, uint16_t index, bufferDatatype data):&#160;kBuffer.c']]],
   ['bug_20list',['Bug List',['../bug.html',1,'']]]
 ];

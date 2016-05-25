@@ -266,6 +266,31 @@ bufferStatus_t bufferWrite(buffer_t* buffer, bufferDatatype data){
 }
 
 /**
+ * @brief Add data to the end of the ringbuffer. If the buffer is full, overwrite the first data
+ * @param   buffer  pointer to a buffer_t instance
+ * @param   data    data which should be written
+ * @return  a element of #bufferStatus_t
+ * @retval  bufferOK    it worked as expected
+ * @retval  bufferNotInitialized    the bufferInit() method hasn't been called or failed before
+ */
+bufferStatus_t bufferWriteOverwrite(buffer_t* buffer, bufferDatatype data){
+    //If the buffer is full, dummy read one byte
+    if(bufferIsFull(buffer)){
+        bufferDatatype temp;
+        (void)bufferRead(buffer, &temp);
+    }
+    
+    bufferStatus_t temp = bufferWriteToIndex(buffer, buffer->writePointer, data);
+    if(temp == bufferOK){
+        buffer->datacount++;
+        buffer->writePointer = (buffer->writePointer + 1) % buffer->length;
+        return temp;
+    }else{
+        return temp;
+    }
+}
+
+/**
  * @brief read data from the beginning of the buffer
  * @param   buffer  pointer to a buffer_t instance
  * @param   data    pointer to a variable where data should be stored
