@@ -9,6 +9,10 @@
 #ifndef KBUFFER_H
 #define KBUFFER_H
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #include <stdint.h>
 
 /**
@@ -82,6 +86,10 @@ bufferStatus_t bufferAvailable(buffer_t* buffer, uint16_t* available);
 #ifdef BUFFER_ENABLE_MEAN
 bufferStatus_t bufferMean(buffer_t* buffer, bufferDatatype* meanOut);
 bufferStatus_t bufferMeanRMS(buffer_t* buffer, bufferDatatype* meanOut);
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

@@ -153,7 +153,7 @@ bufferStatus_t bufferInit(buffer_t* buffer, uint16_t bufferSize){
     buffer->datacount = 0;
     
     buffer->elementLength = sizeof(bufferDatatype);
-    buffer->data = malloc(buffer->elementLength * bufferSize);
+    buffer->data = (bufferDatatype*)malloc(buffer->elementLength * bufferSize);
     if(buffer->data != NULL){
         buffer->isInitialized = 1;
         buffer->length = bufferSize;
