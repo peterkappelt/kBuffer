@@ -57,6 +57,11 @@ enum \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t buffer\+Size)
 \begin{DoxyCompactList}\small\item\em init a new buffer This function inits a new \hyperlink{structbuffer__t}{buffer\+\_\+t}.~\newline
  \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_a8da8904eb3cb9b87699cf0f45ce5bf51}{buffer\+Init\+Static} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t buffer\+Size, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$buffer\+Array)
+\begin{DoxyCompactList}\small\item\em init a new buffer This function inits a new \hyperlink{structbuffer__t}{buffer\+\_\+t}, but doesn\textquotesingle{}t allocate the memory dynamically~\newline
+ You\textquotesingle{}ve to provide an array of the datatype and the required length when calling this function.~\newline
+ This function might be useful, if you want to save the overhead of the malloc() function~\newline
+ \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_a8508583be1e356a243b0ce67254c516e}{buffer\+Write\+To\+Index} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t index, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} data)
 \begin{DoxyCompactList}\small\item\em write data to a specific index of the buffer. W\+A\+R\+N\+I\+NG\+: Take care when using this function, it is against the main concept of a ringbuffer \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_aa0d7e2a4b6fd3da2822d7f968be74e5c}{buffer\+Read\+From\+Index} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t index, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$data)
@@ -71,6 +76,8 @@ uint8\+\_\+t \hyperlink{k_buffer_8h_ac69b8a12a33d0cf0a5dab8feb4f7b020}{buffer\+I
 \begin{DoxyCompactList}\small\item\em Add data to the end of the ringbuffer. If the buffer is full, overwrite the first data. \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_a9b80be9033ccd6b5a101f811520ab4cc}{buffer\+Read} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$data)
 \begin{DoxyCompactList}\small\item\em read data from the beginning of the buffer \end{DoxyCompactList}\item 
+\hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_a5ecef1fd460ed9635269abce02be866f}{buffer\+Peek} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} $\ast$data)
+\begin{DoxyCompactList}\small\item\em have a look at the next element in the buffer, but do not increase the read pointer \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_ac806d926fd21729feb18f8e7738e76b4}{buffer\+Fill} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, \hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{buffer\+Datatype} data, uint8\+\_\+t silent)
 \begin{DoxyCompactList}\small\item\em fill the whole buffer with given dummy data. \end{DoxyCompactList}\item 
 \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} \hyperlink{k_buffer_8h_afa8bb2b701cd9b7f871c12e0fabd66e1}{buffer\+Available} (\hyperlink{structbuffer__t}{buffer\+\_\+t} $\ast$buffer, uint16\+\_\+t $\ast$available)
@@ -217,6 +224,39 @@ an element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+
 {\em buffer\+OK} & It seems, like everything went well \\
 \hline
 \end{DoxyRetVals}
+\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Init\+Static@{buffer\+Init\+Static}}
+\index{buffer\+Init\+Static@{buffer\+Init\+Static}!k\+Buffer.\+h@{k\+Buffer.\+h}}
+\subsubsection[{\texorpdfstring{buffer\+Init\+Static(buffer\+\_\+t $\ast$buffer, uint16\+\_\+t buffer\+Size, buffer\+Datatype $\ast$buffer\+Array)}{bufferInitStatic(buffer_t *buffer, uint16_t bufferSize, bufferDatatype *bufferArray)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Init\+Static (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{uint16\+\_\+t}]{buffer\+Size, }
+\item[{{\bf buffer\+Datatype} $\ast$}]{buffer\+Array}
+\end{DoxyParamCaption}
+)}\hypertarget{k_buffer_8h_a8da8904eb3cb9b87699cf0f45ce5bf51}{}\label{k_buffer_8h_a8da8904eb3cb9b87699cf0f45ce5bf51}
+
+
+init a new buffer This function inits a new \hyperlink{structbuffer__t}{buffer\+\_\+t}, but doesn\textquotesingle{}t allocate the memory dynamically~\newline
+ You\textquotesingle{}ve to provide an array of the datatype and the required length when calling this function.~\newline
+ This function might be useful, if you want to save the overhead of the malloc() function~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer (\&) to a \hyperlink{structbuffer__t}{buffer\+\_\+t} object. \\
+\hline
+{\em buffer\+Size} & desired size of the buffer, the total buffer size (e.\+g. length-\/of-\/datatype $\ast$ buffer\+Size) may not exceed 2$^\wedge$16 bytes \\
+\hline
+{\em buffer\+Array} & pointer to a array of the type buffer\+Datatype, which is buffer\+Size elements long \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+OK} & It seems, like everything went well \\
+\hline
+\end{DoxyRetVals}
 \index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Is\+Empty@{buffer\+Is\+Empty}}
 \index{buffer\+Is\+Empty@{buffer\+Is\+Empty}!k\+Buffer.\+h@{k\+Buffer.\+h}}
 \subsubsection[{\texorpdfstring{buffer\+Is\+Empty(buffer\+\_\+t $\ast$buffer)}{bufferIsEmpty(buffer_t *buffer)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t buffer\+Is\+Empty (
@@ -325,6 +365,37 @@ a element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+S
 \end{DoxyRetVals}
 \begin{DoxyRefDesc}{Bug}
 \item[\hyperlink{bug__bug000002}{Bug}]The sum of squared buffer elements is taken. Take precautions, that this variable won\textquotesingle{}t overflow \end{DoxyRefDesc}
+\index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Peek@{buffer\+Peek}}
+\index{buffer\+Peek@{buffer\+Peek}!k\+Buffer.\+h@{k\+Buffer.\+h}}
+\subsubsection[{\texorpdfstring{buffer\+Peek(buffer\+\_\+t $\ast$buffer, buffer\+Datatype $\ast$data)}{bufferPeek(buffer_t *buffer, bufferDatatype *data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Peek (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+\_\+t} $\ast$}]{buffer, }
+\item[{{\bf buffer\+Datatype} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{k_buffer_8h_a5ecef1fd460ed9635269abce02be866f}{}\label{k_buffer_8h_a5ecef1fd460ed9635269abce02be866f}
+
+
+have a look at the next element in the buffer, but do not increase the read pointer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to a \hyperlink{structbuffer__t}{buffer\+\_\+t} instance \\
+\hline
+{\em data} & pointer to a variable where data should be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a element of \hyperlink{k_buffer_8h_a7a0bf550b7bd49d85172e409c0034fe6}{buffer\+Status\+\_\+t} 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em buffer\+OK} & it worked as expected \\
+\hline
+{\em buffer\+Not\+Initialized} & the \hyperlink{k_buffer_8c_aec18d6ea571b1326dbeb7ca15f4969c0}{buffer\+Init()} method hasn\textquotesingle{}t been called or failed before \\
+\hline
+{\em buffer\+Empty} & the buffer is empty an no more data can be read \\
+\hline
+\end{DoxyRetVals}
 \index{k\+Buffer.\+h@{k\+Buffer.\+h}!buffer\+Read@{buffer\+Read}}
 \index{buffer\+Read@{buffer\+Read}!k\+Buffer.\+h@{k\+Buffer.\+h}}
 \subsubsection[{\texorpdfstring{buffer\+Read(buffer\+\_\+t $\ast$buffer, buffer\+Datatype $\ast$data)}{bufferRead(buffer_t *buffer, bufferDatatype *data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf buffer\+Status\+\_\+t} buffer\+Read (

@@ -2,9 +2,9 @@
 A ringbuffer consists of variables, which can be accessed in a continuous way.~\newline
  You have to define, which datatype you want to have the elements.~\newline
  By default, the elements are unsigned 16bit integers (uint16\+\_\+t).~\newline
- The datatype is defined in \hyperlink{k_buffer_8h}{k\+Buffer.\+h} \+: 
+ You can change the datatype by defining it. This definition must be {\bfseries before} the inclusion of th \hyperlink{k_buffer_8h}{k\+Buffer.\+h} header file 
 \begin{DoxyCode}
-\textcolor{preprocessor}{#define bufferDatatype uint16\_t}
+\textcolor{preprocessor}{#define bufferDatatype your\_datatype}
 \end{DoxyCode}
  Instead of uint16\+\_\+t, you can insert (almost) any datatype you want. \hypertarget{fundamental_usage_init}{}\section{Initializing a ringbuffer}\label{fundamental_usage_init}
 At first, you have to include the k\+Buffer library into your project. This can be done by copying the files from src/k\+Buffer to your project\textquotesingle{}s directory. You can include the header as usual\+: 
@@ -24,6 +24,12 @@ At first, you have to include the k\+Buffer library into your project. This can 
 \}\textcolor{keywordflow}{else}\{
  do\_something\_there\_was\_an\_error();
 \}
+\end{DoxyCode}
+ If you want to avoid the memory overhead of the dynamic memory allocation of the malloc() function you could use the \hyperlink{k_buffer_8c_a8da8904eb3cb9b87699cf0f45ce5bf51}{buffer\+Init\+Static()} function. 
+\begin{DoxyCode}
+\hyperlink{structbuffer__t}{buffer\_t} ringbuffer;
+\hyperlink{k_buffer_8h_ae8d6ebfbda34ebc2e00138c04b46e9b1}{bufferDatatype} ringbufferPayload[8];
+\hyperlink{k_buffer_8c_a8da8904eb3cb9b87699cf0f45ce5bf51}{bufferInitStatic}(&ringbuffer, 8, &ringbufferPayload[0]);
 \end{DoxyCode}
  \hypertarget{fundamental_usage_write}{}\section{Writing data to the buffer}\label{fundamental_usage_write}
 To write data to the buffer, you can use the \hyperlink{k_buffer_8c_a9d6410a89adf65a3ef12340ecb9bbd55}{buffer\+Write()} function\+: 

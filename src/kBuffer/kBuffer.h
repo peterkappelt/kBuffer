@@ -19,7 +19,9 @@ extern "C"{
  * @brief The datatype of one buffer element.
  * As default, it is an 16 bit unsigned integer. Feel free to change it to your needs
  */
-#define bufferDatatype uint16_t
+#ifndef bufferDatatype
+	#define bufferDatatype uint16_t
+#endif
 
 /**
  * @brief Enables mean/ averaging functions. 
@@ -74,6 +76,7 @@ typedef enum{
 //Function declearations
 
 bufferStatus_t bufferInit(buffer_t* buffer, uint16_t bufferSize);
+bufferStatus_t bufferInitStatic(buffer_t* buffer, uint16_t bufferSize, bufferDatatype* bufferArray);
 bufferStatus_t bufferWriteToIndex(buffer_t* buffer, uint16_t index, bufferDatatype data);
 bufferStatus_t bufferReadFromIndex(buffer_t* buffer, uint16_t index, bufferDatatype* data);
 uint8_t bufferIsEmpty(buffer_t* buffer);

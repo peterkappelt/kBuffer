@@ -15,6 +15,7 @@
  * #bufferStatus_t<br>
  * <br>
  * bufferInit()<br>
+ * bufferInitStatic()<br>
  * <br>
  * bufferWrite()<br>
  * bufferWriteOverwrite()<br>
@@ -46,9 +47,9 @@
  * A ringbuffer consists of variables, which can be accessed in a continuous way.<br>
  * You have to define, which datatype you want to have the elements.<br>
  * By default, the elements are unsigned 16bit integers (uint16_t).<br>
- * The datatype is defined in kBuffer.h :
+ * You can change the datatype by defining it. This definition must be <b>before</b> the inclusion of th kBuffer.h header file
  * @code
- * #define bufferDatatype uint16_t
+ * #define bufferDatatype your_datatype
  * @endcode
  * Instead of uint16_t, you can insert (almost) any datatype you want.
  * @section init Initializing a ringbuffer
@@ -71,6 +72,12 @@
  * }else{
  *  do_something_there_was_an_error();
  * }
+ * @endcode
+ * If you want to avoid the memory overhead of the dynamic memory allocation of the malloc() function you could use the bufferInitStatic() function.
+ * @code
+ * buffer_t ringbuffer;
+ * bufferDatatype ringbufferPayload[8];
+ * bufferInitStatic(&ringbuffer, 8, &ringbufferPayload[0]);
  * @endcode
  * @section write Writing data to the buffer
  * To write data to the buffer, you can use the bufferWrite() function:
@@ -164,6 +171,31 @@ bufferStatus_t bufferInit(buffer_t* buffer, uint16_t bufferSize){
         buffer->isInitialized = 0;
         return bufferMemoryAllocationFailed;
     }
+}
+
+/**
+ * @brief init a new buffer
+ * This function inits a new buffer_t, but doesn't allocate the memory dynamically<br>
+ * You've to provide an array of the datatype and the required length when calling this function.<br>
+ * This function might be useful, if you want to save the overhead of the malloc() function<br>
+ * @param   buffer  Pointer (&) to a buffer_t object.
+ * @param   bufferSize  desired size of the buffer, the total buffer size (e.g. length-of-datatype * bufferSize) may not exceed 2^16 bytes
+ * @param   bufferArray	pointer to a array of the type bufferDatatype, which is bufferSize elements long
+ * @return  an element of #bufferStatus_t
+ * @retval  bufferOK    It seems, like everything went well
+ */
+bufferStatus_t bufferInitStatic(buffer_t* buffer, uint16_t bufferSize, bufferDatatype* bufferArray){
+    buffer->readPointer = 0;
+    buffer->writePointer = 0;
+    buffer->datacount = 0;
+    
+    buffer->elementLength = sizeof(bufferDatatype);
+    buffer->data = bufferArray;
+
+    buffer->isInitialized = 1;
+    buffer->length = bufferSize;
+    bufferFill(buffer, 0, 1);
+    return bufferOK;
 }
 
 /**

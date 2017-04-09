@@ -12,3 +12,5 @@ The main functionality of a ringbuffer is implemented and works. See the documen
 An automatic doxygen documentation will be available here: https://rawgit.com/peterkappelt/kBuffer/master/doc/doxygen/html/index.html
 
 The PDF-version of the doxygen manual can be downloaded here: https://github.com/peterkappelt/kBuffer/raw/master/doc/doxygen/latex/refman.pdf
+
+![Kappelt Logo](/doc/kappelt-logo.png)

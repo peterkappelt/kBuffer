@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="kappelt-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">kBuffer
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -158,6 +158,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:aec18d6ea571b1326dbeb7ca15f4969c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">init a new buffer This function inits a new <a class="el" href="structbuffer__t.html" title="Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a buffe...">buffer_t</a>.<br />
   <a href="#aec18d6ea571b1326dbeb7ca15f4969c0">More...</a><br /></td></tr>
 <tr class="separator:aec18d6ea571b1326dbeb7ca15f4969c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da8904eb3cb9b87699cf0f45ce5bf51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="k_buffer_8h.html#a8da8904eb3cb9b87699cf0f45ce5bf51">bufferInitStatic</a> (<a class="el" href="structbuffer__t.html">buffer_t</a> *buffer, uint16_t bufferSize, <a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> *bufferArray)</td></tr>
+<tr class="memdesc:a8da8904eb3cb9b87699cf0f45ce5bf51"><td class="mdescLeft">&#160;</td><td class="mdescRight">init a new buffer This function inits a new <a class="el" href="structbuffer__t.html" title="Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a buffe...">buffer_t</a>, but doesn't allocate the memory dynamically<br />
+ You've to provide an array of the datatype and the required length when calling this function.<br />
+ This function might be useful, if you want to save the overhead of the malloc() function<br />
+  <a href="#a8da8904eb3cb9b87699cf0f45ce5bf51">More...</a><br /></td></tr>
+<tr class="separator:a8da8904eb3cb9b87699cf0f45ce5bf51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8508583be1e356a243b0ce67254c516e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="k_buffer_8h.html#a8508583be1e356a243b0ce67254c516e">bufferWriteToIndex</a> (<a class="el" href="structbuffer__t.html">buffer_t</a> *buffer, uint16_t index, <a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> data)</td></tr>
 <tr class="memdesc:a8508583be1e356a243b0ce67254c516e"><td class="mdescLeft">&#160;</td><td class="mdescRight">write data to a specific index of the buffer. WARNING: Take care when using this function, it is against the main concept of a ringbuffer  <a href="#a8508583be1e356a243b0ce67254c516e">More...</a><br /></td></tr>
 <tr class="separator:a8508583be1e356a243b0ce67254c516e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,6 +185,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9b80be9033ccd6b5a101f811520ab4cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="k_buffer_8h.html#a9b80be9033ccd6b5a101f811520ab4cc">bufferRead</a> (<a class="el" href="structbuffer__t.html">buffer_t</a> *buffer, <a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> *data)</td></tr>
 <tr class="memdesc:a9b80be9033ccd6b5a101f811520ab4cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">read data from the beginning of the buffer  <a href="#a9b80be9033ccd6b5a101f811520ab4cc">More...</a><br /></td></tr>
 <tr class="separator:a9b80be9033ccd6b5a101f811520ab4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ecef1fd460ed9635269abce02be866f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="k_buffer_8h.html#a5ecef1fd460ed9635269abce02be866f">bufferPeek</a> (<a class="el" href="structbuffer__t.html">buffer_t</a> *buffer, <a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> *data)</td></tr>
+<tr class="memdesc:a5ecef1fd460ed9635269abce02be866f"><td class="mdescLeft">&#160;</td><td class="mdescRight">have a look at the next element in the buffer, but do not increase the read pointer  <a href="#a5ecef1fd460ed9635269abce02be866f">More...</a><br /></td></tr>
+<tr class="separator:a5ecef1fd460ed9635269abce02be866f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac806d926fd21729feb18f8e7738e76b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="k_buffer_8h.html#ac806d926fd21729feb18f8e7738e76b4">bufferFill</a> (<a class="el" href="structbuffer__t.html">buffer_t</a> *buffer, <a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> data, uint8_t silent)</td></tr>
 <tr class="memdesc:ac806d926fd21729feb18f8e7738e76b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">fill the whole buffer with given dummy data.  <a href="#ac806d926fd21729feb18f8e7738e76b4">More...</a><br /></td></tr>
 <tr class="separator:ac806d926fd21729feb18f8e7738e76b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -373,6 +382,58 @@ buffer is full, no more data can be written </p>
 
 </div>
 </div>
+<a class="anchor" id="a8da8904eb3cb9b87699cf0f45ce5bf51"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a> bufferInitStatic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbuffer__t.html">buffer_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>bufferSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> *&#160;</td>
+          <td class="paramname"><em>bufferArray</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>init a new buffer This function inits a new <a class="el" href="structbuffer__t.html" title="Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a buffe...">buffer_t</a>, but doesn't allocate the memory dynamically<br />
+ You've to provide an array of the datatype and the required length when calling this function.<br />
+ This function might be useful, if you want to save the overhead of the malloc() function<br />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Pointer (&amp;) to a <a class="el" href="structbuffer__t.html" title="Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a buffe...">buffer_t</a> object. </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>desired size of the buffer, the total buffer size (e.g. length-of-datatype * bufferSize) may not exceed 2^16 bytes </td></tr>
+    <tr><td class="paramname">bufferArray</td><td>pointer to a array of the type bufferDatatype, which is bufferSize elements long </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an element of <a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6" title="buffer function return codes ">bufferStatus_t</a> </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">bufferOK</td><td>It seems, like everything went well </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a5c599b9386c73ccd7b5eeb25f6cca38e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -520,6 +581,50 @@ buffer is full, no more data can be written </p>
   </dd>
 </dl>
 <dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bug:</a></b></dt><dd>The sum of squared buffer elements is taken. Take precautions, that this variable won't overflow </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5ecef1fd460ed9635269abce02be866f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6">bufferStatus_t</a> bufferPeek </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbuffer__t.html">buffer_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="k_buffer_8h.html#ae8d6ebfbda34ebc2e00138c04b46e9b1">bufferDatatype</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>have a look at the next element in the buffer, but do not increase the read pointer </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>pointer to a <a class="el" href="structbuffer__t.html" title="Struct for buffer handling. If you need a ringbuffer in your software, you should instantiate a buffe...">buffer_t</a> instance </td></tr>
+    <tr><td class="paramname">data</td><td>pointer to a variable where data should be stored </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a element of <a class="el" href="k_buffer_8h.html#a7a0bf550b7bd49d85172e409c0034fe6" title="buffer function return codes ">bufferStatus_t</a> </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">bufferOK</td><td>it worked as expected </td></tr>
+    <tr><td class="paramname">bufferNotInitialized</td><td>the <a class="el" href="k_buffer_8c.html#aec18d6ea571b1326dbeb7ca15f4969c0" title="init a new buffer This function inits a new buffer_t.  ">bufferInit()</a> method hasn't been called or failed before </td></tr>
+    <tr><td class="paramname">bufferEmpty</td><td>the buffer is empty an no more data can be read </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
